@@ -31,6 +31,10 @@ mat-toolbar {
   background: #2099d1;
 }
 
+mat-icon {
+  color: white;
+}
+
 .hvr-bounce-to-bottom {
   display: inline-block;
   vertical-align: middle;
