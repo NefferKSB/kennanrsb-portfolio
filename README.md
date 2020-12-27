@@ -1,4 +1,6 @@
-# KennanrsbPortfolio
+# KennanRSB Portfolio Website
+
+This is the revamped Kennan RSB portfolio site built using Angular. As of now (12/2020) this is just a past time project that will hopefully become a live website once completed. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
