@@ -8,11 +8,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './header/navbar.component';
 import { AngularMaterialModule } from './angular-material.module';
+import { RoutesModule } from './routes/routes.module';
+import { AboutComponent } from './about/about.component';
+import { SitesComponent } from './sites/sites.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent,
+    SitesComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +27,8 @@ import { AngularMaterialModule } from './angular-material.module';
     BrowserAnimationsModule,
     FormsModule,
     FlexLayoutModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    RoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

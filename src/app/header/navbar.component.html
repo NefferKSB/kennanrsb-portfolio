@@ -1,19 +1,19 @@
 <mat-toolbar>
   <span>
-    <a routerLink='home'>Kennan RSB</a>
+    <a routerLink="/">Kennan RSB</a>
   </span>
   <!-- This fills the remaining space of the current row -->
-  <span class='spacer'></span>
+  <span class="spacer"></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-xs>
     <ul>
-      <li class='hvr-bounce-to-bottom'>
-        <a href="#">About</a>
+      <li class="hvr-bounce-to-bottom">
+        <a routerLink="/about">About</a>
       </li>
-      <li class='hvr-bounce-to-bottom'>
-        <a href="#">Sites</a>
+      <li class="hvr-bounce-to-bottom">
+        <a routerLink="/sites">Sites</a>
       </li>
-      <li class='hvr-bounce-to-bottom'>
-        <a routerLink='/auth/contact' routerLinkActive='mat-accent'>Contact</a>
+      <li class="hvr-bounce-to-bottom">
+        <a routerLink="/contact" routerLinkActive="mat-accent">Contact</a>
       </li>
     </ul>
   </div>
@@ -21,18 +21,17 @@
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
-<mat-menu x-position="before" #menu="matMenu" class='test'>
+<mat-menu x-position="before" #menu="matMenu">
   <ul>
-    <li mat-menu-item class='hvr-bounce-to-bottom'>
-      <a href="#">About</a>
+    <li mat-menu-item class="hvr-bounce-to-bottom">
+      <a routerLink="/about">About</a>
     </li>
-    <li mat-menu-item class='hvr-bounce-to-bottom'>
-      <a href="#">Sites</a>
+    <li mat-menu-item class="hvr-bounce-to-bottom">
+      <a routerLink="/sites">Sites</a>
     </li>
-    <li mat-menu-item class='hvr-bounce-to-bottom'>
-      <a routerLink='/auth/contact' routerLinkActive='mat-accent'>Contact</a>
+    <li mat-menu-item class="hvr-bounce-to-bottom">
+      <a routerLink="/contact" routerLinkActive="mat-accent">Contact</a>
     </li>
   </ul>
-  <router-outlet></router-outlet>
 </mat-menu>
 
