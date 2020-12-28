@@ -6,7 +6,6 @@ ul {
   list-style: none;
   padding: 0;
   display: flex;
-  height: 100%;
 }
 
 li {
@@ -20,6 +19,7 @@ li a {
 
 a {
   text-decoration: none;
+  cursor: pointer;
   color: white;
   display:block
 }
@@ -27,12 +27,16 @@ a {
 mat-toolbar {
   height: 5.75em;
   padding: 0 0 0 16px;
-  line-height: 6em;
+  line-height: 5.8em;
   background: #2099d1;
 }
 
 mat-icon {
   color: white;
+}
+
+.dropdown-link-styling {
+  color: #2099d1;
 }
 
 .hvr-bounce-to-bottom {
@@ -71,8 +75,12 @@ mat-icon {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.hvr-bounce-to-bottom:hover, .hvr-bounce-to-bottom:focus, .hvr-bounce-to-bottom:active {
+.hvr-bounce-to-bottom:hover, .hvr-bounce-to-bottom:focus {
   color: white;
+  outline: none;
+}
+.hvr-bounce-to-bottom:active, .hvr-bounce-to-bottom:focus {
+  opacity: 0.5;
 }
 .hvr-bounce-to-bottom:hover:before, .hvr-bounce-to-bottom:focus:before, .hvr-bounce-to-bottom:active:before {
   -webkit-transform: scaleY(1);
