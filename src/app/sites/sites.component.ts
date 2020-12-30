@@ -1,11 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface Site_Cards {
   title: string;
-  subTitle: string;
   imageSrc: string;
-  altText: string;
-  paragraphText: string;
   btnOneText: string;
   btnTwoText: string;
 }
@@ -15,16 +12,34 @@ export interface Site_Cards {
   templateUrl: './sites.component.html',
   styleUrls: ['./sites.component.css']
 })
-export class SitesComponent {
+export class SitesComponent implements OnInit {
+  breakpoint: number | undefined;
+  constructor() {}
+
+  ngOnInit() {
+    this.breakpoint = (window.innerWidth <= 400) ? 1 : 3
+  }
+
+  onResize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 3;
+  }
+
   siteCards: Site_Cards[] = [
     {
-      title: 'Shiba Inu',
-      subTitle: 'Dog Breed',
+      title: 'Site One',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      altText: 'Photo of a Shiba Inu',
-      paragraphText: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.`,
+      btnOneText: 'LIKE',
+      btnTwoText: 'SHARE'
+    },
+    {
+      title: 'Site Two',
+      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      btnOneText: 'LIKE',
+      btnTwoText: 'SHARE'
+    },
+    {
+      title: 'Site Three',
+      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       btnOneText: 'LIKE',
       btnTwoText: 'SHARE'
     }

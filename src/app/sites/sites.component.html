@@ -1,16 +1,17 @@
 <h1>Sites</h1>
-<mat-card class="example-card" *ngFor="let siteCard of siteCards">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{siteCard.title}}</mat-card-title>
-    <mat-card-subtitle>{{siteCard.subTitle}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src]="siteCard.imageSrc" [alt]="siteCard.altText">
-  <mat-card-content>
-    <p>{{siteCard.paragraphText}}</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>{{siteCard.btnOneText}}</button>
-    <button mat-button>{{siteCard.btnTwoText}}</button>
-  </mat-card-actions>
-</mat-card>
+<mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="15em" gutterSize="20px">
+  <mat-grid-tile
+  *ngFor="let siteCard of siteCards">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{siteCard.title}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="siteCard.imageSrc">
+      <mat-card-actions>
+        <button mat-button>{{siteCard.btnOneText}}</button>
+        <button mat-button>{{siteCard.btnTwoText}}</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+

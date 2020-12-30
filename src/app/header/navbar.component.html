@@ -6,6 +6,9 @@
   <span class="spacer"></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-xs>
     <ul>
+      <li routerLink="/home" class="hvr-bounce-to-bottom">
+        <a>Home</a>
+      </li>
       <li routerLink="/about" class="hvr-bounce-to-bottom">
         <a>About</a>
       </li>
@@ -22,6 +25,9 @@
   </button>
 </mat-toolbar>
 <mat-menu #menu="matMenu">
+  <li routerLink="/home" mat-menu-item>
+    <a class="dropdown-link-styling">Home</a>
+  </li>
   <li routerLink="/about" mat-menu-item>
     <a class="dropdown-link-styling">About</a>
   </li>
