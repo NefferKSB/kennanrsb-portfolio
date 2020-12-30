@@ -13,15 +13,22 @@ export interface Site_Cards {
   styleUrls: ['./sites.component.css']
 })
 export class SitesComponent implements OnInit {
-  breakpoint: number | undefined;
+  colNum: number | undefined;
+  rowHeight: string | undefined;
+  margin: string | undefined;
+
   constructor() {}
 
   ngOnInit() {
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 3
+    this.colNum = (window.innerWidth <= 400) ? 1 : 3
+    this.rowHeight = (window.innerWidth <= 400) ? "28em" : "32em"
+    this.margin = (window.innerWidth <= 400) ? "0 1em" : "0 5em"
   }
 
   onResize(event: any) {
-    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 3;
+    this.colNum = (event.target.innerWidth <= 400) ? 1 : 3;
+    this.rowHeight = (event.target.innerWidth <= 400) ? "20em" : "32em";
+    this.margin = (window.innerWidth <= 400) ? "0 1em" : "0 5em"
   }
 
   siteCards: Site_Cards[] = [

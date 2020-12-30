@@ -1,5 +1,5 @@
 <h1>Sites</h1>
-<mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="15em" gutterSize="20px">
+<mat-grid-list [cols]="colNum" (window:resize)="onResize($event)" [rowHeight]="rowHeight" [style.margin]="margin" gutterSize="20px">
   <mat-grid-tile
   *ngFor="let siteCard of siteCards">
     <mat-card class="example-card">
