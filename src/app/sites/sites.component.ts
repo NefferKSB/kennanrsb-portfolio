@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 export interface Site_Cards {
   title: string;
   imageSrc: string;
-  btnOneText: string;
-  btnTwoText: string;
 }
 
 @Component ({
@@ -13,42 +11,68 @@ export interface Site_Cards {
   styleUrls: ['./sites.component.css']
 })
 export class SitesComponent implements OnInit {
-  colNum: number | undefined;
-  rowHeight: string | undefined;
-  margin: string | undefined;
+  public colNum: number;
+  public rowHeight: string;
+  public margin: string;
 
-  constructor() {}
+  constructor() {
+    this.colNum = 0;
+    this.rowHeight = '';
+    this.margin ='';
+  }
 
   ngOnInit() {
-    this.colNum = (window.innerWidth <= 400) ? 1 : 3
-    this.rowHeight = (window.innerWidth <= 400) ? "28em" : "32em"
-    this.margin = (window.innerWidth <= 400) ? "0 1em" : "0 5em"
+    const screenWidth = window.innerWidth;
+
+    if(screenWidth > 700) {
+      this.colNum = 3;
+      this.rowHeight = "20em";
+      this.margin = "0 5em";
+    }
+    if(screenWidth <= 700) {
+      this.colNum = 2;
+      this.rowHeight = "20em";
+      this.margin = "0 1em";
+    }
+    if(screenWidth <= 400) {
+      this.colNum = 1;
+      this.rowHeight = "20em";
+      this.margin = "0 1em";
+    }
   }
 
   onResize(event: any) {
-    this.colNum = (event.target.innerWidth <= 400) ? 1 : 3;
-    this.rowHeight = (event.target.innerWidth <= 400) ? "20em" : "32em";
-    this.margin = (window.innerWidth <= 400) ? "0 1em" : "0 5em"
+    const screenWidth = event.target.innerWidth;
+
+    if(screenWidth > 700) {
+      this.colNum = 3;
+      this.rowHeight = "20em";
+      this.margin = "0 5em";
+    }
+    if(screenWidth <= 700) {
+      this.colNum = 2;
+      this.rowHeight = "20em";
+      this.margin = "0 1em";
+    }
+    if(screenWidth <= 400) {
+      this.colNum = 1;
+      this.rowHeight = "20em";
+      this.margin = "0 1em";
+    }
   }
 
   siteCards: Site_Cards[] = [
     {
       title: 'Site One',
-      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      btnOneText: 'LIKE',
-      btnTwoText: 'SHARE'
+      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     },
     {
       title: 'Site Two',
-      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      btnOneText: 'LIKE',
-      btnTwoText: 'SHARE'
+      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     },
     {
       title: 'Site Three',
-      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      btnOneText: 'LIKE',
-      btnTwoText: 'SHARE'
+      imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg'
     }
   ];
 }

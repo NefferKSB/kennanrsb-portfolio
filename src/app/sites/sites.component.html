@@ -2,15 +2,11 @@
 <mat-grid-list [cols]="colNum" (window:resize)="onResize($event)" [rowHeight]="rowHeight" [style.margin]="margin" gutterSize="20px">
   <mat-grid-tile
   *ngFor="let siteCard of siteCards">
-    <mat-card class="example-card">
+    <mat-card>
       <mat-card-header>
         <mat-card-title>{{siteCard.title}}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image [src]="siteCard.imageSrc">
-      <mat-card-actions>
-        <button mat-button>{{siteCard.btnOneText}}</button>
-        <button mat-button>{{siteCard.btnTwoText}}</button>
-      </mat-card-actions>
+      <img [src]="siteCard.imageSrc">
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

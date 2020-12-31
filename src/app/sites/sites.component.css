@@ -1,5 +1,6 @@
 mat-grid-tile {
   background: lightblue;
+  border-radius: 20px;
 }
 
 mat-card {
@@ -11,4 +12,10 @@ mat-card {
 
 mat-card-header {
   padding-top: 20px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
