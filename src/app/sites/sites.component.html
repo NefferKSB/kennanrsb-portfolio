@@ -1,7 +1,9 @@
 <h1>Sites</h1>
-<mat-grid-list [cols]="colNum" (window:resize)="onResize($event)" [rowHeight]="rowHeight" [style.margin]="margin" gutterSize="20px">
+<mat-grid-list [cols]="colNum" (window:resize)="onResize($event)" rowHeight="16:4" [style.margin]="margin" gutterSize="20px">
   <mat-grid-tile
-  *ngFor="let siteCard of siteCards">
+  *ngFor="let siteCard of siteCards"
+  [colspan]="siteCard.cols"
+  [rowspan]="siteCard.rows">
     <mat-card>
       <mat-card-header>
         <mat-card-title>{{siteCard.title}}</mat-card-title>
