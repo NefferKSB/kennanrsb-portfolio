@@ -24,6 +24,10 @@ a {
   display:block
 }
 
+a:hover {
+  background-color: transparent;
+}
+
 mat-toolbar {
   height: 5.75em;
   padding: 0 0 0 16px;
@@ -39,6 +43,7 @@ mat-icon {
   color: #2099d1;
 }
 
+/*CSS for bounce to bottom animation*/
 .hvr-bounce-to-bottom {
   display: inline-block;
   vertical-align: middle;
@@ -88,3 +93,4 @@ mat-icon {
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
+/*End of CSS for bounce to bottom animation*/

@@ -1,16 +1,17 @@
+h1 {
+  margin: 4rem 0 1.68rem 0;
+  font-weight: 500;
+}
+
 mat-grid-tile {
   border-radius: 20px;
 }
 
 mat-card {
-  background-color: #f2f2f2;
+  background-color: #ddd9d9;
   height: 100%;
   width: 100%;
   padding: 20px 0;
-}
-
-mat-card-header {
-  padding-top: 20px;
 }
 
 img {
