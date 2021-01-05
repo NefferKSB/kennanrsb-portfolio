@@ -39,6 +39,10 @@ mat-icon {
   color: white;
 }
 
+button:focus {
+  background-color: transparent;
+}
+
 .dropdown-link-styling {
   color: #2099d1;
 }
