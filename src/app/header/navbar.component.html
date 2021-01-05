@@ -20,22 +20,25 @@
       </li>
     </ul>
   </div>
-  <button mat-button [disableRipple]="true" [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-xs class="no-hover-effect">
+  <mat-menu #menu="matMenu">
+    <li routerLink="/home" mat-menu-item>
+      <a class="dropdown-link-styling">Home</a>
+    </li>
+    <li routerLink="/about" mat-menu-item>
+      <a class="dropdown-link-styling">About</a>
+    </li>
+    <li routerLink="/sites" mat-menu-item>
+      <a class="dropdown-link-styling">Sites</a>
+    </li>
+    <li routerLink="/contact" mat-menu-item>
+      <a class="dropdown-link-styling">Contact</a>
+    </li>
+  </mat-menu>
+  <button *ngIf="(isMobile | async)" mat-button [disableRipple]="true" [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-xs class="no-hover-effect">
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
-<mat-menu #menu="matMenu">
-  <li routerLink="/home" mat-menu-item>
-    <a class="dropdown-link-styling">Home</a>
-  </li>
-  <li routerLink="/about" mat-menu-item>
-    <a class="dropdown-link-styling">About</a>
-  </li>
-  <li routerLink="/sites" mat-menu-item>
-    <a class="dropdown-link-styling">Sites</a>
-  </li>
-  <li routerLink="/contact" mat-menu-item>
-    <a class="dropdown-link-styling">Contact</a>
-  </li>
-</mat-menu>
+
+
+
 
