@@ -2,11 +2,19 @@ mat-grid-tile {
   border-radius: 20px;
 }
 
+mat-grid-tile:hover {
+  cursor: pointer;
+}
+
 mat-card {
   background-color: #ddd9d9;
   height: 100%;
   width: 100%;
   padding: 20px 0;
+}
+
+mat-card-header {
+  padding-top: 15px;
 }
 
 img {
