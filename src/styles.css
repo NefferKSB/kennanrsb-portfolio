@@ -3,11 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-h1 {
-  margin: 1.25em 0 1em 0;
-  font-weight: 500;
-}
-
 .no-hover-effect.mat-button:hover .mat-button-focus-overlay {
   background-color: transparent;
 }

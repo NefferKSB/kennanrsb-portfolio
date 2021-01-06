@@ -13,6 +13,7 @@ import { RoutesModule } from './routes/routes.module';
 import { AboutComponent } from './about/about.component';
 import { SitesComponent } from './sites/sites.component';
 import { ContactComponent } from './contact/contact.component';
+import { MaterialElevationDirective } from './material-elevation.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
     NavbarComponent,
     AboutComponent,
     SitesComponent,
-    ContactComponent
+    ContactComponent,
+    MaterialElevationDirective
   ],
   imports: [
     BrowserModule,
