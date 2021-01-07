@@ -14,8 +14,8 @@ export interface Site_Cards {
 })
 
 export class SitesComponent implements OnInit {
-  defaultElevation: number = 4;
-  raisedElevation: number = 16;
+  defaultElevation = 4;
+  raisedElevation = 16;
 
   /***********************************************
   Logic for handling screen responsivness
