@@ -29,6 +29,8 @@ a:hover {
 }
 
 mat-toolbar {
+  font-family: 'Barlow', sans-serif;
+  text-transform: uppercase;
   height: 5.75em;
   padding: 0 0 0 16px;
   line-height: 5.8em;
