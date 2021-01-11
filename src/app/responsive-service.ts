@@ -3,7 +3,7 @@ import { Observable, Subject } from "rxjs";
 
 @Injectable()
 
-export class responsiveService {
+export class ResponsiveService {
   private isMobile = new Subject();
   public screenWidth: string;
 
