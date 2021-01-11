@@ -6,12 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  public rowHeight: string;
-  public margin: string;
+  public listRowHeight: string;
+  public listCols: number;
+  public listMargin: string;
+  public tileRowSpan: number;
 
   constructor() {
-    this.rowHeight = "500px";
-    this.margin = "20px 20px";
+    this.listRowHeight = "13em";
+    this.listCols = 2;
+    this.listMargin = "40px";
+    this.tileRowSpan = 3;
   }
 
   ngOnInit() {
