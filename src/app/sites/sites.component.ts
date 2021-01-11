@@ -4,7 +4,7 @@ export interface Site_Cards {
   title: string;
   imageSrc: string;
   cols: number;
-  rows: any;
+  rows: number;
 }
 
 @Component ({
