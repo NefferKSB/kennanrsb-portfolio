@@ -4,10 +4,15 @@ mat-grid-tile {
 
 h2 {
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .aboutTextSection {
+  font-size: 11px;
+  padding: 0px 5px;
   position: absolute;
-  left: 5px;
+  left: 10px;
+  right: 0;
   top: 0;
+  bottom: 0;
 }
