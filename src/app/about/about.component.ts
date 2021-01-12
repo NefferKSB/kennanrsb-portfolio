@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../responsive-service';
 
 @Component ({
   selector: 'about',
@@ -6,19 +7,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  public listRowHeight: string;
-  public listCols: number;
-  public listMargin: string;
-  public tileRowSpan: number;
+  public fontSize: string;
+  public textSectionDisplay: string;
+  public iconSectionDisplay: string;
+  public sectionItemsWidth: string;
+  public screenSize: string = this.responsiveService.screenWidth;
 
-  constructor() {
-    this.listRowHeight = "13em";
-    this.listCols = 2;
-    this.listMargin = "40px";
-    this.tileRowSpan = 3;
+  constructor(private responsiveService: ResponsiveService) {
+    this.fontSize = "13.5px";
+    this.textSectionDisplay = "inline-block";
+    this.iconSectionDisplay = "inline-block";
+    this.sectionItemsWidth = "50%";
   }
 
   ngOnInit() {
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+  }
 
+  onResize(event: any){
+    this.responsiveService.checkWidth();
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+  }
+
+  setResponsiveAttrs(screenSize: string) {
+    if(screenSize === 'lg') {
+      this.fontSize = "13.5px";
+      this.textSectionDisplay = "inline-block";
+      this.iconSectionDisplay = "inline-block";
+      this.sectionItemsWidth = "50%";
+    }
+    if(screenSize === 'md') {
+      this.fontSize = "13.5px";
+      this.textSectionDisplay = "inline-block";
+      this.iconSectionDisplay = "inline-block";
+      this.sectionItemsWidth = "50%";
+    }
+    if(screenSize === 'sm') {
+      this.fontSize = "13.5px";
+      this.textSectionDisplay = "block";
+      this.iconSectionDisplay = "block";
+      this.sectionItemsWidth = "100%";
+    }
   }
 }

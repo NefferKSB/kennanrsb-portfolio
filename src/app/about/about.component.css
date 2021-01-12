@@ -1,18 +1,8 @@
-mat-grid-tile {
-  background-color: #ddd9d9;
-}
-
 h2 {
   text-transform: uppercase;
   text-decoration: underline;
 }
 
-.aboutTextSection {
-  font-size: 11px;
-  padding: 0px 5px;
-  position: absolute;
-  left: 10px;
-  right: 0;
-  top: 0;
-  bottom: 0;
+.aboutText {
+  background-color: #ddd9d9;
 }
