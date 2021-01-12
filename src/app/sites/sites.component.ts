@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../responsive-service';
 
 export interface Site_Cards {
   title: string;
@@ -24,22 +25,25 @@ export class SitesComponent implements OnInit {
   ***********************************************/
   public colNum: number;
   public margin: string;
-  public screenWidth = window.innerWidth;
+  public screenSize: string = this.responsiveService.screenWidth;
 
-  constructor() {
+  constructor(private responsiveService: ResponsiveService) {
     this.colNum = 0;
-    this.margin ='';
+    this.margin = '';
   }
 
   ngOnInit() {
-    this.screenWidth = window.innerWidth;
-    this.setResponsiveAttrs(this.screenWidth);
+    this.screenSize = this.responsiveService.screenWidth;
+    console.log('triggered')
+    console.log(this.screenSize)
+    this.setResponsiveAttrs(this.screenSize);
   }
 
-  onResize(event: any) {
-    this.screenWidth = event.target.innerWidth;
-    this.setResponsiveAttrs(this.screenWidth);
-    this.siteCards.forEach(card => card.rows = this.setSiteCardCal(this.screenWidth));
+  onResize(event: any){
+    this.responsiveService.checkWidth();
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+    this.siteCards.forEach(card => card.rows = this.setSiteCardCal(this.screenSize));
   }
   /*********************************
   End of screen responsiveness logic
@@ -50,39 +54,39 @@ export class SitesComponent implements OnInit {
       title: 'Site One',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       cols: 2,
-      rows: this.setSiteCardCal(this.screenWidth)
+      rows: this.setSiteCardCal(this.screenSize)
     },
     {
       title: 'Site Two',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       cols: 2,
-      rows: this.setSiteCardCal(this.screenWidth)
+      rows: this.setSiteCardCal(this.screenSize)
     },
     {
       title: 'Site Three',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       cols: 2,
-      rows: this.setSiteCardCal(this.screenWidth)
+      rows: this.setSiteCardCal(this.screenSize)
     }
   ];
 
-  setResponsiveAttrs(screenWidth: number) {
-    if(screenWidth > 700) {
+  setResponsiveAttrs(screenSize: string) {
+    if(screenSize === 'lg') {
       this.colNum = 6;
       this.margin = "0 5em";
     }
-    if(screenWidth <= 700) {
+    if(screenSize === 'md') {
       this.colNum = 4;
       this.margin = "0 1em";
     }
-    if(screenWidth <= 400) {
+    if(screenSize === 'sm') {
       this.colNum = 2;
       this.margin = "0 1em";
     }
   }
 
-  setSiteCardCal(screenWidth: number) {
-    if(screenWidth <= 400){
+  setSiteCardCal(screenSize: string) {
+    if(screenSize === 'md' || screenSize === 'lg'){
       return 6;
     }
     else
