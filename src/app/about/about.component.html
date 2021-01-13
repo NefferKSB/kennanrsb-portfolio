@@ -1,61 +1,64 @@
-<mat-grid-list
-[cols]="listCols"
-[rowHeight]="listRowHeight"
-[style.margin]="listMargin">
-  <mat-grid-tile
-  [rowspan]="tileRowSpan">
-    <div class="aboutTextSection">
-      <h2><b>About me</b></h2>
-      <b>
-      <p>
-        I am a driven curious individual with a background in IT, Web Development, Mechanical Engineering, and Music. I’m currently employed as a ServiceNow Developer who specializes in mobile app development and deployment. Within ServiceNow I have experience developing within the base ITSM suite:
-      </p>
-      <ul>
-        <li>Incident Management</li>
-        <li>Problem Management</li>
-        <li>Change Management</li>
-        <li>Knowledge Management</li>
-        <li>Request Fulfillment</li>
-      </ul>
-      <p>
-        Outside of the base ITSM suite, I also have experience developing within ServiceNow’s ITBM suite, more specifically these modules:
-      </p>
-      <ul>
-        <li>Portfolio Project Management</li>
-        <li>Resource Management</li>
-      </ul>
-      <p>
-        Outside of those core modules I also have experience developing solutions for:
-      </p>
-      <ul>
-        <li>Walk-up Experience</li>
-        <li>Agent Mobile</li>
-        <li>Now Mobile</li>
-      </ul>
-      <p>
-        My time spent working as both a ServiceNow developer and a consultant has taught me that the secret to a successful go-live for any project hinges on a clear understanding of both the client and the consultant / developer of a given project’s:
-      </p>
-      <ul>
-        <li>Scope</li>
-        <li>Purpose</li>
-        <li>Deadline</li>
-      </ul>
-      <p>
-        With that realization, I strive to approach any new project be it Web Dev, IT, or Engineering with these key points in mind.
-      </p>
-      <p>
-        In terms of Web Dev, I am currently focusing on development in the MEAN stack (MongoDB, Express, Angular, and node.js) though neither my knowledge nor more curiosity are limited to just these technologies.
-      </p>
-      <p>
-        For more information regarding my work history click here.
-      </p>
-      <p>
-        For more information regarding the web technologies, I’m familiar with click here.
-      </p>
-      <p>
-        If you like to contact me click here.
-      </p>
-      </b>
+<section (window:resize)="onResize($event)">
+  <div class="container">
+    <div class="row">
+      <div class="aboutText col-6" [style.font-size]="fontSize">
+        <h2><b>About me</b></h2>
+        <b>
+        <p>
+          I am a driven curious individual with a background in IT, Web Development, Mechanical Engineering, and Music. I’m currently employed as a ServiceNow Developer who specializes in mobile app development and deployment. Within ServiceNow I have experience developing within the base ITSM suite:
+        </p>
+        <ul>
+          <li>Incident Management</li>
+          <li>Problem Management</li>
+          <li>Change Management</li>
+          <li>Knowledge Management</li>
+          <li>Request Fulfillment</li>
+        </ul>
+        <p>
+          Outside of the base ITSM suite, I also have experience developing within ServiceNow’s ITBM suite, more specifically these modules:
+        </p>
+        <ul>
+          <li>Portfolio Project Management</li>
+          <li>Resource Management</li>
+        </ul>
+        <p>
+          Outside of those core modules I also have experience developing solutions for:
+        </p>
+        <ul>
+          <li>Walk-up Experience</li>
+          <li>Agent Mobile</li>
+          <li>Now Mobile</li>
+        </ul>
+        <p>
+          My time spent working as both a ServiceNow developer and a consultant has taught me that the secret to a successful go-live for any project hinges on a clear understanding of both the client and the consultant / developer of a given project’s:
+        </p>
+        <ul>
+          <li>Scope</li>
+          <li>Purpose</li>
+          <li>Deadline</li>
+        </ul>
+        <p>
+          With that realization, I strive to approach any new project be it Web Dev, IT, or Engineering with these key points in mind.
+        </p>
+        <p>
+          In terms of Web Dev, I am currently focusing on development in the MEAN stack (MongoDB, Express, Angular, and node.js) though neither my knowledge nor more curiosity are limited to just these technologies.
+        </p>
+        <p>
+          For more information regarding my work history click here.
+        </p>
+        <p>
+          For more information regarding the web technologies, I’m familiar with click here.
+        </p>
+        <p>
+          If you like to contact me click here.
+        </p>
+        </b>
+      </div>
+      <div class="col-6">
+        <h1>Test</h1>
+      </div>
     </div>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</section>
+
+

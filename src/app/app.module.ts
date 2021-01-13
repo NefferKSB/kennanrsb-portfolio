@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { SitesComponent } from './sites/sites.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialElevationDirective } from './material-elevation.directive';
+import { ResponsiveService } from './responsive-service';
 
 @NgModule({
   declarations: [
