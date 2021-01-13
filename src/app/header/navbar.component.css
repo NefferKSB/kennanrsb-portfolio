@@ -6,6 +6,7 @@ ul {
   list-style: none;
   padding: 0;
   display: flex;
+  margin: 0;
 }
 
 li {
@@ -30,10 +31,13 @@ a:hover {
 
 mat-toolbar {
   font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
   text-transform: uppercase;
   height: 5.75em;
   padding: 0 0 0 16px;
   line-height: 5.8em;
+  color: #20d1c2;
   background: #2099d1;
 }
 
