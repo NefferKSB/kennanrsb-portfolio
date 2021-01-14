@@ -34,8 +34,6 @@ export class SitesComponent implements OnInit {
 
   ngOnInit() {
     this.screenSize = this.responsiveService.screenWidth;
-    console.log('triggered')
-    console.log(this.screenSize)
     this.setResponsiveAttrs(this.screenSize);
   }
 
