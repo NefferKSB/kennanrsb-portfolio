@@ -11,17 +11,16 @@ import { NavbarComponent } from './header/navbar.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { RoutesModule } from './routes/routes.module';
 import { AboutComponent } from './about/about.component';
-import { SitesComponent } from './sites/sites.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialElevationDirective } from './material-elevation.directive';
-import { ResponsiveService } from './responsive-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    SitesComponent,
+    ProjectsComponent,
     ContactComponent,
     MaterialElevationDirective
   ],
