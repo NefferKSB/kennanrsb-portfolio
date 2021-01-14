@@ -9,12 +9,12 @@ export interface Site_Cards {
 }
 
 @Component ({
-  selector: 'sites',
-  templateUrl: './sites.component.html',
-  styleUrls: ['./sites.component.css']
+  selector: 'projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.css']
 })
 
-export class SitesComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
   defaultElevation = 4;
   raisedElevation = 16;
 

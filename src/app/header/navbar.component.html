@@ -6,50 +6,50 @@
   <span class="spacer"></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-xs>
     <ul>
-      <li href="#home" class="hvr-bounce-to-bottom">
-        <a>Home</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#home">Home</a>
       </li>
-      <li href="#about" class="hvr-bounce-to-bottom">
-        <a>About</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#about">About</a>
       </li>
-      <li href="#experience" class="hvr-bounce-to-bottom">
-        <a>Experience</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#experience">Experience</a>
       </li>
-      <li href="#education" class="hvr-bounce-to-bottom">
-        <a>Education</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#education">Education</a>
       </li>
-      <li href="#skills" class="hvr-bounce-to-bottom">
-        <a>Skills</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#skills">Skills</a>
       </li>
-      <li href="#projects" class="hvr-bounce-to-bottom">
-        <a>Projects</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#projects">Projects</a>
       </li>
-      <li href="#contact" class="hvr-bounce-to-bottom">
-        <a>Contact</a>
+      <li class="hvr-bounce-to-bottom">
+        <a href="#contact">Contact</a>
       </li>
     </ul>
   </div>
   <mat-menu #menu="matMenu">
-    <li href="#home" mat-menu-item>
-      <a class="dropdown-link-styling">Home</a>
+    <li mat-menu-item>
+      <a href="#home" class="dropdown-link-styling">Home</a>
     </li>
-    <li href="#about" mat-menu-item>
-      <a class="dropdown-link-styling">About</a>
+    <li mat-menu-item>
+      <a href="#about" class="dropdown-link-styling">About</a>
     </li>
-    <li href="#experience" mat-menu-item>
-      <a class="dropdown-link-styling">Experience</a>
+    <li mat-menu-item>
+      <a href="#experience" class="dropdown-link-styling">Experience</a>
     </li>
-    <li href="#education" mat-menu-item>
-      <a class="dropdown-link-styling">Education</a>
+    <li mat-menu-item>
+      <a href="#education" class="dropdown-link-styling">Education</a>
     </li>
-    <li href="#skills" mat-menu-item>
-      <a class="dropdown-link-styling">Skills</a>
+    <li mat-menu-item>
+      <a href="#skills" class="dropdown-link-styling">Skills</a>
     </li>
-    <li href="#projects" mat-menu-item>
-      <a class="dropdown-link-styling">Projects</a>
+    <li mat-menu-item>
+      <a href="#projects" class="dropdown-link-styling">Projects</a>
     </li>
-    <li href="#contact" mat-menu-item>
-      <a class="dropdown-link-styling">Contact</a>
+    <li mat-menu-item>
+      <a href="#contact" class="dropdown-link-styling">Contact</a>
     </li>
   </mat-menu>
   <button *ngIf="(isMobile | async)" mat-button [disableRipple]="true" [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-xs class="no-hover-effect">
