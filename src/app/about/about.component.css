@@ -3,6 +3,16 @@ h2 {
   text-decoration: underline;
 }
 
+img {
+  display: block;
+  padding-bottom: 10px;
+}
+
 .aboutText {
   background-color: #ddd9d9;
 }
+
+.aboutIcons {
+  padding-left: 12em;
+}
+

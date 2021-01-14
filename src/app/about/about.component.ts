@@ -8,16 +8,10 @@ import { ResponsiveService } from '../responsive-service';
 })
 export class AboutComponent implements OnInit {
   public fontSize: string;
-  public textSectionDisplay: string;
-  public iconSectionDisplay: string;
-  public sectionItemsWidth: string;
   public screenSize: string = this.responsiveService.screenWidth;
 
   constructor(private responsiveService: ResponsiveService) {
-    this.fontSize = "13.5px";
-    this.textSectionDisplay = "inline-block";
-    this.iconSectionDisplay = "inline-block";
-    this.sectionItemsWidth = "50%";
+    this.fontSize = "10px";
   }
 
   ngOnInit() {
@@ -33,22 +27,13 @@ export class AboutComponent implements OnInit {
 
   setResponsiveAttrs(screenSize: string) {
     if(screenSize === 'lg') {
-      this.fontSize = "13.5px";
-      this.textSectionDisplay = "inline-block";
-      this.iconSectionDisplay = "inline-block";
-      this.sectionItemsWidth = "50%";
+      this.fontSize = "10px";
     }
     if(screenSize === 'md') {
-      this.fontSize = "13.5px";
-      this.textSectionDisplay = "inline-block";
-      this.iconSectionDisplay = "inline-block";
-      this.sectionItemsWidth = "50%";
+      this.fontSize = "10px";
     }
     if(screenSize === 'sm') {
-      this.fontSize = "13.5px";
-      this.textSectionDisplay = "block";
-      this.iconSectionDisplay = "block";
-      this.sectionItemsWidth = "100%";
+      this.fontSize = "10px";
     }
   }
 }
