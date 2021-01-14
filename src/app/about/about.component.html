@@ -1,7 +1,7 @@
 <section (window:resize)="onResize($event)">
   <div class="container">
     <div class="row">
-      <div class="aboutText col-8" data-aos="fade-right" data-aos-offset="30" [style.font-size]="fontSize">
+      <div class="aboutText col-8" data-aos="fade-right" [style.font-size]="fontSize">
         <h2><b>About me</b></h2>
         <b>
         <p>
@@ -55,8 +55,13 @@
         </b>
       </div>
       <div class="col-4">
-        <h1>Test</h1>
-        <img src="/assets/imgs/angular.svg">
+        <img data-aos="fade-left" src="../../assets/imgs/servicenowLogo.svg" width="180" height="100">
+        <img data-aos="fade-left" data-aos-delay="250" src="../../assets/imgs/angular.svg" width="100" height="100">
+        <img data-aos="fade-left" data-aos-delay="500" src="../../assets/imgs/html-logo.svg" width="100" height="100">
+        <img data-aos="fade-left" data-aos-delay="750" src="../../assets/imgs/javascript.svg" width="100" height="100">
+        <img data-aos="fade-left" data-aos-delay="1000" src="../../assets/imgs/css.svg" width="100" height="100">
+        <img data-aos="fade-left" data-aos-delay="1250" src="../../assets/imgs/mongodb.svg" width="100" height="100">
+        <img data-aos="fade-left" data-aos-delay="1500" data-aos-offset=-12 src="../../assets/imgs/nodejs.svg" width="100" height="100">
       </div>
     </div>
   </div>

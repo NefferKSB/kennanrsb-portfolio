@@ -7,3 +7,7 @@ h2 {
   background-color: #ddd9d9;
 }
 
+img {
+  display: block;
+  padding-bottom: 10px;
+}
