@@ -18,10 +18,14 @@ li a {
   height: 100%;
 }
 
+li:hover a {
+  color: inherit;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
-  color: white;
+  color: #20d1c2;
   display:block
 }
 
