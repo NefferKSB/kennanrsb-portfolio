@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'sites', component: ProjectsComponent},
   { path: 'contact', component: ContactComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
 

@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './angular-material.module';
 import { RoutesModule } from './routes/routes.module';
 import { MaterialElevationDirective } from './material-elevation.directive';
-import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './header/navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -43,8 +42,7 @@ import { FooterComponent } from './footer/footer.component';
     FlexLayoutModule,
     AngularMaterialModule,
     RoutesModule,
-    LayoutModule,
-    SimpleSmoothScrollModule
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
