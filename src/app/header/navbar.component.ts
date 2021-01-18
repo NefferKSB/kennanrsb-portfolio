@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMobile = this.breakpointObserver
-      .observe(['(max-width: 600px)'])
+      .observe(['(max-width: 950px)'])
       .pipe(map(({ matches }) => matches));
   }
 }

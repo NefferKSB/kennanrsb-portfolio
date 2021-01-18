@@ -1,5 +1,8 @@
-.spacer {
-  flex: 1 1 auto;
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
 }
 
 ul {
@@ -44,11 +47,20 @@ mat-toolbar {
 }
 
 mat-icon {
-  color: white;
+  color: #20d1c2;
+}
+
+button {
+  background-color: #2099d1;
 }
 
 button:focus {
   background-color: transparent;
+  outline: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .dropdown-link-styling {
@@ -92,13 +104,16 @@ button:focus {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
 .hvr-bounce-to-bottom:hover, .hvr-bounce-to-bottom:focus {
   color: white;
   outline: none;
 }
+
 .hvr-bounce-to-bottom:active, .hvr-bounce-to-bottom:focus {
   opacity: 0.5;
 }
+
 .hvr-bounce-to-bottom:hover:before, .hvr-bounce-to-bottom:focus:before, .hvr-bounce-to-bottom:active:before {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
