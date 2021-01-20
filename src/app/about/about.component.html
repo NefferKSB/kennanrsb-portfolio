@@ -1,7 +1,7 @@
-<section id="about" (window:resize)="onResize($event)">
+<section (window:resize)="onResize($event)">
   <div class="container">
     <div class="row">
-      <div class="aboutText col-8" data-aos="fade-right" [style.font-size]="fontSize">
+      <div id="about" class="aboutText col-12" data-aos="fade-right" [style.font-size]="fontSize">
         <h2><b>About me</b></h2>
         <b>
         <p>
@@ -54,23 +54,21 @@
         </p>
         </b>
       </div>
-      <div class="aboutIconsContainer col-4">
-        <img class="servicenowLogo" data-aos="fade-left" src="../../assets/imgs/servicenowLogo.svg" width="180" height="100">
-        <div class="aboutIconsGroup">
-          <img class="angularLogo" data-aos="fade-left" data-aos-delay="100" src="../../assets/imgs/angular.svg" width="100" height="100">
-          <img class="htmlLogo" data-aos="fade-left" data-aos-delay="300" src="../../assets/imgs/html-logo.svg" width="100" height="100">
+      <div class="row justify-content-around aboutIcon">
+        <div class="col-4">
+          <img src="../../assets/imgs/servicenowLogo.svg" width="160" height="100">
+          <img src="../../assets/imgs/angular.svg" width="100" height="100">
+          <img src="../../assets/imgs/bootstrap.svg" width="100" height="100">
         </div>
-        <div class="aboutIconsGroup">
-          <img class="cssLogo" data-aos="fade-left" data-aos-delay="100" src="../../assets/imgs/css.svg" width="100" height="100">
-          <img class="bootstrapLogo" data-aos="fade-left" data-aos-delay="300" src="../../assets/imgs/bootstrap.svg" width="100" height="100">
+        <div class="col-4">
+          <img src="../../assets/imgs/html-logo.svg" width="80" height="80">
+          <img src="../../assets/imgs/css.svg" width="100" height="100">
+          <img src="../../assets/imgs/javascript.svg" width="100" height="100">
         </div>
-        <div class="aboutIconsGroup">
-          <img class="javascriptLogo" data-aos="fade-left" data-aos-delay="100" src="../../assets/imgs/javascript.svg" width="100" height="100">
-          <img class="typescriptLogo" data-aos="fade-left" data-aos-delay="300" src="../../assets/imgs/typescript.svg" width="100" height="100">
-        </div>
-        <div class="aboutIconsGroup">
-          <img class="nodejsLogo" data-aos="fade-left" data-aos-delay="100" src="../../assets/imgs/nodejs.svg" width="100" height="100">
-          <img class="mongodbLogo" data-aos="fade-left" data-aos-delay="300" src="../../assets/imgs/mongodb.svg" width="100" height="100">
+        <div class="col-4">
+          <img src="../../assets/imgs/typescript.svg" width="100" height="100">
+          <img src="../../assets/imgs/nodejs.svg" width="100" height="100">
+          <img src="../../assets/imgs/mongodb.svg" width="100" height="100">
         </div>
       </div>
     </div>
