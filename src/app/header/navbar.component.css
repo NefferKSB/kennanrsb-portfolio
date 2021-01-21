@@ -1,14 +1,15 @@
-mat-toolbar {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}
-
 ul {
   list-style: none;
   padding: 0;
   display: flex;
+  justify-content: center;
   margin: 0;
+  height: 100%;
+  align-items: center;
+}
+
+li {
+  height: 100%;
 }
 
 li a {
@@ -33,18 +34,6 @@ a:hover {
   background-color: transparent;
 }
 
-mat-toolbar {
-  font-family: 'Barlow', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  text-transform: uppercase;
-  height: 5.75em;
-  padding: 0 0 0 16px;
-  line-height: 5.8em;
-  color: #20d1c2;
-  background: #2099d1;
-}
-
 mat-icon {
   color: #20d1c2;
 }
@@ -56,6 +45,27 @@ button {
 button:focus {
   background-color: transparent;
   outline: none;
+}
+
+.nav-menu {
+  transition: height 0.25s ease-out;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 5.8em;
+  padding: 0 0 0 16px;
+  line-height: 5.8em;
+  color: #20d1c2;
+  background: #2099d1;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-menu-scroll {
+  height: 3.5em;
+  line-height: 3.5em;
+  opacity: 0.85;
 }
 
 .spacer {

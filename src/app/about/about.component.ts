@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponsiveService } from '../responsive-service';
+import { ResponsiveService } from '../services/responsive-service';
 
 @Component ({
   selector: 'about',
