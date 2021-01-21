@@ -26,6 +26,7 @@
     "@mdi/font": "^5.8.55",
     "bootstrap": "^5.0.0-beta1",
     "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "mongodb": "^3.6.3",
     "rxjs": "~6.6.0",
