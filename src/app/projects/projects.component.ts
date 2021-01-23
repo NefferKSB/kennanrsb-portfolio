@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Site_Cards } from '../models/site-card-model';
 import { ResponsiveService } from '../services/responsive-service';
-
-export interface Site_Cards {
-  title: string;
-  imageSrc: string;
-  cols: number;
-  rows: number;
-}
 
 @Component ({
   selector: 'projects',
