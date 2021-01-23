@@ -13,7 +13,7 @@ export class ExperienceComponent {
     {
       company: 'Plat4mation',
       position: 'Technical Consultant',
-      dateRange: '',
+      dateRange: 'Jul 2018 - Nov 2020',
       experience: [
         "Implemented ServiceNow ITSM instances following ServiceNow's best practices",
         "Experience developing for Project Portfolio Management (ITBM - PPM) instances",
@@ -37,7 +37,7 @@ export class ExperienceComponent {
     {
       company: 'CtrlShift',
       position: 'Volunteer Frontend Developer',
-      dateRange: '',
+      dateRange: 'Jan 2018 - Jul 2018',
       experience: [
         "Updated / Redesigned CtrlShift's landing page using HTML, CSS, Bootstrap, JS, and jQuery",
         "Updated / Redesigned CtrlShift’s events page using HTML, CSS, Bootstrap, Google Calendar API, JS and FullCalendar"
@@ -46,7 +46,7 @@ export class ExperienceComponent {
     {
       company: 'NGC Transmission Equipment (America), Inc',
       position: 'Applications Engineer',
-      dateRange: '',
+      dateRange: 'Aug 2015 - Jun 2017',
       experience: [
         "Built sale order and quote logs using Excel/Visual Basic for Applications",
         "Built a industrial gearbox coupling pre-selection tool using Excel/Visual Basic for Applications",
@@ -59,7 +59,7 @@ export class ExperienceComponent {
     {
       company: 'Sumitomo Drive Technologies',
       position: 'Sales Support Engineer ',
-      dateRange: '',
+      dateRange: 'Jan 2014 - Aug 2015',
       experience: [
         "Functioned as global technical support for assembly centers",
         "Prepared AutoCAD drawings",
@@ -71,7 +71,7 @@ export class ExperienceComponent {
     {
       company: 'Hansen Transmissions',
       position: 'Applications Engineer',
-      dateRange: '',
+      dateRange: 'Mar 2012 - Jan 2014',
       experience: [
         "Entered and managed all gearbox sales orders for Hansen North America",
         "Troubleshot technical issues with customers via phone / email",
@@ -81,17 +81,6 @@ export class ExperienceComponent {
         "Performed quality checks on outgoing gearboxes",
         "Prepared industrial gearbox quotes",
         "Provided detailed technical information to the customer"
-      ]
-    },
-    {
-      company: 'Virginia State University',
-      position: 'Lab Technician',
-      dateRange: '',
-      experience: [
-        "Assisted lab supervisor with completion of projects",
-        "Monitored and assisted new lab technicians",
-        "Operated machine shop equipment",
-        "Performed quality and control duties on shop projects"
       ]
     }
   ]
