@@ -15,3 +15,7 @@ img {
 .aboutIcon {
   margin-top: 25px;
 }
+
+.col-6 .container .row {
+  margin-bottom: 15px;
+}
