@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
   public screenSize: string = this.responsiveService.screenWidth;
 
   constructor(private responsiveService: ResponsiveService) {
-    this.fontSize = "10px";
+    this.fontSize = "18px";
   }
 
   ngOnInit() {
@@ -27,13 +27,13 @@ export class AboutComponent implements OnInit {
 
   setResponsiveAttrs(screenSize: string) {
     if(screenSize === 'lg') {
-      this.fontSize = "10px";
+      this.fontSize = "18px";
     }
     if(screenSize === 'md') {
-      this.fontSize = "10px";
+      this.fontSize = "18px";
     }
     if(screenSize === 'sm') {
-      this.fontSize = "10px";
+      this.fontSize = "18px";
     }
   }
 }

@@ -1,60 +1,21 @@
 <section (window:resize)="onResize($event)">
   <div class="container">
     <div class="row">
-      <div class="h1">About Me</div>
-      <div id="about" class="aboutText col-6 center-text" data-aos="fade-right" [style.font-size]="fontSize">
-        <b>
-        <p>
-          I am a driven curious individual with a background in IT, Web Development, Mechanical Engineering, and Music. I’m currently employed as a ServiceNow Developer who specializes in mobile app development and deployment. Within ServiceNow I have experience developing within the base ITSM suite:
-        </p>
-        <ul>
-          <li>Incident Management</li>
-          <li>Problem Management</li>
-          <li>Change Management</li>
-          <li>Knowledge Management</li>
-          <li>Request Fulfillment</li>
-        </ul>
-        <p>
-          Outside of the base ITSM suite, I also have experience developing within ServiceNow’s ITBM suite, more specifically these modules:
-        </p>
-        <ul>
-          <li>Portfolio Project Management</li>
-          <li>Resource Management</li>
-        </ul>
-        <p>
-          Outside of those core modules I also have experience developing solutions for:
-        </p>
-        <ul>
-          <li>Walk-up Experience</li>
-          <li>Agent Mobile</li>
-          <li>Now Mobile</li>
-        </ul>
-        <p>
-          My time spent working as both a ServiceNow developer and a consultant has taught me that the secret to a successful go-live for any project hinges on a clear understanding of both the client and the consultant / developer of a given project’s:
-        </p>
-        <ul>
-          <li>Scope</li>
-          <li>Purpose</li>
-          <li>Deadline</li>
-        </ul>
-        <p>
-          With that realization, I strive to approach any new project be it Web Dev, IT, or Engineering with these key points in mind.
-        </p>
-        <p>
-          In terms of Web Dev, I am currently focusing on development in the MEAN stack (MongoDB, Express, Angular, and node.js) though neither my knowledge nor more curiosity are limited to just these technologies.
-        </p>
-        <p>
-          For more information regarding my work history click here.
-        </p>
-        <p>
-          For more information regarding the web technologies, I’m familiar with click here.
-        </p>
-        <p>
-          If you'd like to contact me click here.
-        </p>
-        </b>
+      <div id="about" class="col-8" data-aos="fade-right">
+        <div class="h1">About Me</div>
+        <mat-card class="aboutText" [style.font-size]="fontSize">
+          <p>
+            I love knowing how things work, as a child I was constantly building or taking things apart to get a better understand of how things functioned. That mentality has stuck with me my entire life. In college a majored in Mechanical Engineering Technology to further that pursuit. Prior to receiving my degree, I worked as an Application Engineer for a few years. During that time, I was introduced to some internally developed gearbox design software. Along with extensively working with this software, I was also tasked with creating a smart quote log and an RMA (return merchandise authorization) log. I accomplished this by using VBA in Excel.
+          </p>
+          <p>
+            These experiences sparked my interest in programming. While still working as an Applications Engineer, I started following YouTube Udemy, and other various online tutorials covering Web Development topics in my spare time. After around a year of study, I started attending a meetup group where I began to mentor people who where completely new to Web Development. Soon after that I landed my first IT professional position as a ServiceNow consultant. In that role I used JavaScript extensively as well as AngularJS, HTML, and CSS.
+          </p>
+          <p>
+            Nearly daily, I research build, or read up on some IT and or programming topic. Outside of these pursuits you may see me on a stage somewhere playing my saxophone.
+          </p>
+        </mat-card>
       </div>
-      <div class="col-6">
+      <div class="col-4">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -69,7 +30,7 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <img src="../../assets/imgs/html-logo.svg" width="80" height="80">
+              <img src="../../assets/imgs/html.svg" width="100" height="100">
               <img src="../../assets/imgs/css.svg" width="100" height="100">
             </div>
           </div>

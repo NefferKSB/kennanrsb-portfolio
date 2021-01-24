@@ -8,7 +8,7 @@ img {
 }
 
 .aboutText {
-  background-color: #f0ebeb;
+  background-color: #f2f3f7;
   border-radius: 5px;
 }
 
@@ -16,6 +16,11 @@ img {
   margin-top: 25px;
 }
 
-.col-6 .container .row {
-  margin-bottom: 15px;
+.col-4 .container {
+  padding-top: 1em;
+  padding-left: 7em;
+}
+
+.col-4 .container .row {
+  margin-bottom: 1em;
 }
