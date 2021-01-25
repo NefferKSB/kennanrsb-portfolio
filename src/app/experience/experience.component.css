@@ -49,7 +49,7 @@
   display: block;
   width: 40px;
   height: 40px;
-  background: #2c98f0;
+  background: #2099d1;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -64,22 +64,6 @@
 
   .work-history-centered .work-history-entry .work-history-entry-inner .work-history-icon i {
     color: #fff;
-  }
-
-  .work-history-centered .work-history-entry .work-history-entry-inner .work-history-icon.color-2 {
-    background: #ec5453;
-  }
-
-  .work-history-centered .work-history-entry .work-history-entry-inner .work-history-icon.color-3 {
-    background: #f9bf3f;
-  }
-
-  .work-history-centered .work-history-entry .work-history-entry-inner .work-history-icon.color-4 {
-    background: #a84cb8;
-  }
-
-  .work-history-centered .work-history-entry .work-history-entry-inner .work-history-icon.color-5 {
-    background: #2fa499;
   }
 
   .work-history-centered .work-history-entry .work-history-entry-inner .work-history-icon.color-none {
@@ -157,4 +141,19 @@
   font-size: 1.3em;
   font-weight: 500;
   font-family: "Quicksand", Arial, sans-serif;
+}
+
+.display-more-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.display-more-btn-container button {
+  border-color: #2099d1;
+  background-color: #2099d1;
+  color: white;
+}
+
+.display-more-btn-container button:focus {
+  box-shadow: none;
 }

@@ -1,10 +1,10 @@
-<div id="experience">
+<section id="experience">
   <div class="container">
-    <div class="h1">Experience</div>
+    <div class="h1" data-aos="fade-up-left">Experience</div>
     <div class="row">
       <div class="col-md-12">
         <div class="work-history-centered">
-          <article class="work-history-entry" data-aos="fade-up-left" *ngFor="let workEntry of workEntries">
+          <article class="work-history-entry" data-aos="fade-up-left" *ngFor="let workEntry of workEntries | slice : expLineStart:expLineLimit">
             <div class="work-history-entry-inner">
               <div class="work-history-icon color-1">
                 <i class="fas fa-pencil-alt"></i>
@@ -18,8 +18,17 @@
               </div>
             </div>
           </article>
+          <div *ngIf="expLineLimit < workEntries.length" class="display-more-btn-container">
+            <button type="button" class="btn btn-primary" (click)="showMoreExpLines()">Show More</button>
+          </div>
+          <div *ngIf="expLineLimit > 2" class="display-more-btn-container">
+            <button type="button" class="btn btn-primary" (click)="showLessExpLines()">Show Less</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+<div class="container">
+  <hr>
 </div>
