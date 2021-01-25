@@ -12,6 +12,7 @@ hr {
   overflow: visible;
   text-align: center;
   height: 5px;
+  margin: 3em 0;
 }
 
 .no-hover-effect.mat-button:hover .mat-button-focus-overlay {

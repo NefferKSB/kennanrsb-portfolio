@@ -21,12 +21,13 @@
   clear: both;
 }
 
+/* The time line color is set via background */
 .work-history-centered:before {
   content: '';
   position: absolute;
   display: block;
   width: 4px;
-  background: #f2f3f7;
+  background: #e3e3e6;
   top: 20px;
   bottom: 20px;
   margin-left: 29px;
@@ -49,15 +50,16 @@
   display: block;
   width: 40px;
   height: 40px;
+  color: #fff;
   background: #2099d1;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
   text-align: center;
-  -moz-box-shadow: 0 0 0 5px #f2f3f7;
-  -webkit-box-shadow: 0 0 0 5px #f2f3f7;
-  box-shadow: 0 0 0 5px #f2f3f7;
+  -moz-box-shadow: 0 0 0 5px #d0d0d3;
+  -webkit-box-shadow: 0 0 0 5px #d0d0d3;
+  box-shadow: 0 0 0 5px #d0d0d3;
   line-height: 40px;
   float: left;
 }
