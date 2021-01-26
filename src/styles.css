@@ -26,3 +26,43 @@ hr {
 .mat-menu-item:hover {
   border-radius: 5px;
 }
+
+.display-more-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.display-more-btn-container button {
+  border-color: #2099d1;
+  background-color: #2099d1;
+  color: white;
+}
+
+.display-more-btn-container button:focus {
+  border-color: #2099d1;
+  background-color: #2099d1;
+  box-shadow: none;
+}
+
+.display-more-btn-container button:hover {
+  border-color: #2099d1;
+  background-color: #2099d1;
+}
+
+.display-more-btn-container button:active:focus {
+  border-color: #2099d1;
+  background-color: #2099d1;
+  box-shadow: none;
+}
+
+.display-more-btn-container button:active:visited {
+  border-color: #2099d1;
+  background-color: #2099d1;
+  box-shadow: none;
+}
+
+.display-more-btn-container .btn-primary:active {
+  border-color: #2099d1;
+  background-color: #2099d1;
+  box-shadow: none;
+}

@@ -144,18 +144,3 @@
   font-weight: 500;
   font-family: "Quicksand", Arial, sans-serif;
 }
-
-.display-more-btn-container {
-  display: flex;
-  justify-content: center;
-}
-
-.display-more-btn-container button {
-  border-color: #2099d1;
-  background-color: #2099d1;
-  color: white;
-}
-
-.display-more-btn-container button:focus {
-  box-shadow: none;
-}

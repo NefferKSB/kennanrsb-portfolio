@@ -7,9 +7,13 @@ import { Education_Entry } from '../models/education-entry-model';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent {
+  eduLineStart: number;
+  eduLineLimit: number;
   educationEntries: Education_Entry[];
 
   constructor() {
+    this.eduLineStart = 0;
+    this.eduLineLimit = 2;
     this.educationEntries = [
       {
         title: 'Mechanical Engineering & Technology',
@@ -55,5 +59,13 @@ export class EducationComponent {
         ]
       },
     ]
+  }
+
+  showMoreExpLines(){
+    this.eduLineLimit = this.eduLineLimit + 2;
+  }
+
+  showLessExpLines(){
+    this.eduLineLimit = this.eduLineLimit - 2;
   }
 }

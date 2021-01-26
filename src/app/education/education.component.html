@@ -1,7 +1,7 @@
 <section id="education">
   <div class="container">
     <div class="h1" data-aos="fade-right" data-aos-offset="50">Education</div>
-    <div class="card" *ngFor="let eduEntry of educationEntries">
+    <div class="card" *ngFor="let eduEntry of educationEntries | slice : eduLineStart:eduLineLimit">
       <div class="row">
         <div
           class="col-md-3 eduCardType"
@@ -29,6 +29,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <div *ngIf="eduLineLimit < educationEntries.length" class="display-more-btn-container">
+      <button type="button" class="btn btn-primary" (click)="showMoreExpLines()">Show More</button>
+    </div>
+    <div *ngIf="eduLineLimit > 2" class="display-more-btn-container">
+      <button type="button" class="btn btn-primary" (click)="showLessExpLines()">Show Less</button>
     </div>
   </div>
 </section>
