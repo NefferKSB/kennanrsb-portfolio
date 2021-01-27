@@ -3,4 +3,5 @@ export interface Site_Cards {
   imageSrc: string;
   cols: number;
   rows: number;
+  aos: string;
 }

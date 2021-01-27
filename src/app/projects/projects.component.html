@@ -2,6 +2,7 @@
   <div class="h1" data-aos="fade-down" data-aos-offset="50">Projects</div>
   <mat-grid-list id="projects" [cols]="colNum" (window:resize)="onResize($event)" rowHeight="16:4" [style.margin]="margin" gutterSize="20px">
     <mat-grid-tile
+    [attr.data-aos]="siteCard.aos"
     appMaterialElevation
     [defaultElevation]="defaultElevation"
     [raisedElevation]="raisedElevation"

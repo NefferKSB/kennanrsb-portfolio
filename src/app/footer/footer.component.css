@@ -1,3 +1,7 @@
+div a{
+  margin: 1.5em 2em;
+}
+
 .footer {
   background-color: #2099d1;
   height: 100%;
@@ -7,6 +11,7 @@
 
 .fa-linkedin {
   color: #20d1c2;
+  margin-top: .25em;
   -webkit-transition: color 0.5s ease-out;
   -moz-transition: color 0.5s ease-out;
   -o-transition: color 0.5s ease-out;
@@ -19,6 +24,11 @@
 
 .fa-github {
   color: #20d1c2;
+  margin-top: .25em;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 }
 
 .fa-github:hover {

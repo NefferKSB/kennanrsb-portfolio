@@ -46,19 +46,22 @@ export class ProjectsComponent implements OnInit {
       title: 'Site One',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       cols: 2,
-      rows: this.setSiteCardCal(this.screenSize)
+      rows: this.setSiteCardCal(this.screenSize),
+      aos: 'zoom-in-right'
     },
     {
       title: 'Site Two',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       cols: 2,
-      rows: this.setSiteCardCal(this.screenSize)
+      rows: this.setSiteCardCal(this.screenSize),
+      aos: 'zoom-in-down'
     },
     {
       title: 'Site Three',
       imageSrc: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
       cols: 2,
-      rows: this.setSiteCardCal(this.screenSize)
+      rows: this.setSiteCardCal(this.screenSize),
+      aos: 'zoom-in-left'
     }
   ];
 
