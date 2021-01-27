@@ -1,0 +1,30 @@
+.footer {
+  background-color: #2099d1;
+  height: 100%;
+  width: 100%;
+  padding: 24px 0;
+}
+
+.fa-linkedin {
+  color: #20d1c2;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+
+.fa-linkedin:hover {
+  color: #fff;
+}
+
+.fa-github {
+  color: #20d1c2;
+}
+
+.fa-github:hover {
+  color: #fff;
+}
+
+.copyright {
+  color: #20d1c2;
+}
