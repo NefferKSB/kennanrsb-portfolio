@@ -5,6 +5,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   //Imports are done automatically as an Angular included feature
@@ -14,7 +18,10 @@ import { MatCardModule } from '@angular/material/card';
     MatMenuModule,
     MatIconModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class AngularMaterialModule {}
