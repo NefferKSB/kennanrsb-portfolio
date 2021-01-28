@@ -11,7 +11,7 @@ export class ContactComponent {
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
   optionsSelect: Array<any> = [];
-  selected: string = 'option1';
+  selected: string = '';
 
   @HostListener('input') oninput() {
     if (this.contactForm.valid) {

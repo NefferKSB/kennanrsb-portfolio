@@ -1,6 +1,6 @@
 <div class="container" id="contact">
-  <p class="h1 mb-4 text-center">Contact me</p>
-  <form>
+  <p class="h1 mb-4 text-center" data-aos="fade-down">Contact me</p>
+  <form data-aos="zoom-in-up">
     <mat-form-field appearance="standard">
       <mat-label>Name</mat-label>
       <input matInput placeholder="First and Last Name">
@@ -13,9 +13,8 @@
 
     <!-- Subject -->
     <mat-form-field appearance="standard">
-      <mat-label>Select an option</mat-label>
+      <mat-label>Subject</mat-label>
       <mat-select [(value)]="selected">
-        <mat-option>None</mat-option>
         <mat-option value="option1">Option 1</mat-option>
         <mat-option value="option2">Option 2</mat-option>
         <mat-option value="option3">Option 3</mat-option>
@@ -26,9 +25,6 @@
       <mat-label>Message</mat-label>
       <textarea matInput></textarea>
     </mat-form-field>
+    <button mat-stroked-button color="primary">Send</button>
   </form>
-
-  <!-- Send button -->
-  <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
-    mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -18,20 +18,24 @@ export class NavbarComponent implements OnInit {
     { selector: '.div-spacer', scrollClass: 'div-spacer-scroll'}
   ];
   selectorObjArray: SelectorObject[] = this.selectorObjs;
+  matToolbarHeight: number = 0;
 
   constructor(
     public windowScrollService: WindowScrollService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
   ) {}
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e:Event) {
-    this.windowScrollService.setScrollStyles(this.selectorObjArray);
-  }
 
   ngOnInit(): void {
     this.isMobile = this.breakpointObserver
       .observe(['(max-width: 950px)'])
       .pipe(map(({ matches }) => matches));
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e:Event) {
+    console.log(e);
+    this.windowScrollService.setScrollStyles(this.selectorObjArray);
+    e.preventDefault();
+    e.stopPropagation();
   }
 }
