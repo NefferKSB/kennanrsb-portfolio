@@ -43,11 +43,11 @@ button {
 }
 
 button:focus {
-  background-color: transparent;
+  background-color: #2099d1;
   outline: none;
 }
 
-.nav-menu {
+mat-toolbar {
   transition: height 0.25s ease-out;
   font-weight: 700;
   font-size: 20px;
@@ -60,6 +60,22 @@ button:focus {
   position: fixed;
   top: 0;
   z-index: 10;
+}
+
+mat-toolbar-row {
+  height: auto;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-nav-list a {
+  color: #2099d1;
+}
+
+.mat-drawer.mat-drawer-end {
+  height: fit-content;
 }
 
 .nav-menu-scroll {
@@ -75,6 +91,7 @@ button:focus {
 .dropdown-link-styling {
   color: #2099d1;
 }
+
 
 /*CSS for bounce to bottom animation*/
 .hvr-bounce-to-bottom {

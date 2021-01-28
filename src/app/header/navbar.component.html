@@ -1,59 +1,64 @@
-<mat-toolbar class="nav-menu" (scroll)="onWindowScroll($event)" #matToolbar>
-  <span>
-    <a pageScroll href="#home">Kennan RSB</a>
-  </span>
-  <!-- This fills the remaining space of the current row -->
-  <span class="spacer"></span>
-  <div fxLayout="row" fxShow="false" fxShow.gt-xs>
-    <ul>
-      <li class="hvr-bounce-to-bottom">
-        <a href="#about">About</a>
-      </li>
-      <li class="hvr-bounce-to-bottom">
-        <a href="#experience">Experience</a>
-      </li>
-      <li class="hvr-bounce-to-bottom">
-        <a href="#education">Education</a>
-      </li>
-      <li class="hvr-bounce-to-bottom">
-        <a href="#skills">Skills</a>
-      </li>
-      <li class="hvr-bounce-to-bottom">
-        <a href="#projects">Projects</a>
-      </li>
-      <li class="hvr-bounce-to-bottom">
-        <a href="#contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-  <mat-menu #menu="matMenu">
-    <li mat-menu-item>
-      <a href="#home" class="dropdown-link-styling">Home</a>
-    </li>
-    <li mat-menu-item>
-      <a href="#about" class="dropdown-link-styling">About</a>
-    </li>
-    <li mat-menu-item>
-      <a href="#experience" class="dropdown-link-styling">Experience</a>
-    </li>
-    <li mat-menu-item>
-      <a href="#education" class="dropdown-link-styling">Education</a>
-    </li>
-    <li mat-menu-item>
-      <a href="#skills" class="dropdown-link-styling">Skills</a>
-    </li>
-    <li mat-menu-item>
-      <a href="#projects" class="dropdown-link-styling">Projects</a>
-    </li>
-    <li mat-menu-item>
-      <a href="#contact" class="dropdown-link-styling">Contact</a>
-    </li>
-  </mat-menu>
-  <button *ngIf="(isMobile | async)" mat-button [disableRipple]="true" [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-xs class="no-hover-effect">
-    <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
+<div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span>
+        <a href="#home">Kennan RSB</a>
+      </span>
+      <span class="spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <ul>
+          <li class="hvr-bounce-to-bottom">
+            <a href="#about">About</a>
+          </li>
+          <li class="hvr-bounce-to-bottom">
+            <a href="#experience">Experience</a>
+          </li>
+          <li class="hvr-bounce-to-bottom">
+            <a href="#education">Education</a>
+          </li>
+          <li class="hvr-bounce-to-bottom">
+            <a href="#skills">Skills</a>
+          </li>
+          <li class="hvr-bounce-to-bottom">
+            <a href="#projects">Projects</a>
+          </li>
+          <li class="hvr-bounce-to-bottom">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm [disableRipple]="true">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-
-
-
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav position="end" fixedInViewport="true" fixedTopGap="150">
+      <mat-nav-list>
+        <a mat-list-item href="#about">About</a>
+        <a mat-list-item href="#experience">Experience</a>
+        <a mat-list-item href="#education">Education</a>
+        <a mat-list-item href="#skills">Skills</a>
+        <a mat-list-item href="#projects">Projects</a>
+        <a mat-list-item href="#contact">Contact</a>
+        <a mat-list-item href="#home">
+          Back to top <mat-icon>home</mat-icon>
+        </a>
+        <a (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon>close</mat-icon> Close
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <home></home>
+      <about></about>
+      <experience></experience>
+      <education></education>
+      <skills></skills>
+      <projects></projects>
+      <contact></contact>
+      <footer></footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

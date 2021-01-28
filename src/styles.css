@@ -15,6 +15,10 @@ hr {
   margin: 3em 0;
 }
 
+.mat-button-focus-overlay {
+  background-color: transparent!important;
+}
+
 .no-hover-effect.mat-button:hover .mat-button-focus-overlay {
   background-color: transparent;
 }

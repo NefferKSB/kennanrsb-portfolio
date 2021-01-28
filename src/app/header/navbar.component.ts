@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,6 +12,7 @@ import { SelectorObject } from "../models/selector-object-model";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isScrolled = false;
   isMobile: Observable<boolean> | undefined;
   selectorObjs = [
     { selector: '.nav-menu', scrollClass: 'nav-menu-scroll'},
@@ -31,11 +32,8 @@ export class NavbarComponent implements OnInit {
       .pipe(map(({ matches }) => matches));
   }
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e:Event) {
-    console.log(e);
-    this.windowScrollService.setScrollStyles(this.selectorObjArray);
-    e.preventDefault();
-    e.stopPropagation();
+  @HostListener('window:scroll')
+  scrollEvent() {
+    window.pageYOffset >= 116 ? (this.isScrolled = true) : (this.isScrolled = false);
   }
 }

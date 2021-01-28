@@ -1,5 +1,5 @@
 <!-- This serves as spacer between the navbar and header video -->
-<div id="home" class="div-spacer"></div>
+<div id="home" class="div-spacer"  [ngClass]="{'div-spacer-scroll': isScrolled}"></div>
 <header>
   <div class="overlay"></div>
   <video autoplay="autoplay" [muted]="true" loop="loop">
