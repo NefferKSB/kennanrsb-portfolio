@@ -39,7 +39,7 @@ mat-icon {
 }
 
 button {
-  background-color: #2099d1;
+  background-color: transparent;
 }
 
 button:focus {

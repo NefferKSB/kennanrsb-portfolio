@@ -6,32 +6,20 @@ import { Observable, Subject } from "rxjs";
 })
 
 export class ResponsiveService {
-  private isMobile = new Subject();
   public screenWidth: string = "";
 
   constructor() {
     this.checkWidth();
   }
 
-  onMobileChange(status: boolean) {
-    this.isMobile.next(status);
-  }
-
-  getMobileStatus(): Observable<any> {
-    return this.isMobile.asObservable();
-  }
-
   public checkWidth() {
     const width = window.innerWidth;
-    if (width <= 440) {
+    if (width <= 599) {
         this.screenWidth = 'sm';
-        this.onMobileChange(true);
-    } else if (width > 440 && width <= 992) {
+    } else if (width > 599 && width <= 959) {
         this.screenWidth = 'md';
-        this.onMobileChange(false);
     } else {
         this.screenWidth = 'lg';
-        this.onMobileChange(false);
     }
   }
 }

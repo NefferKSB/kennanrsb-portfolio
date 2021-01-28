@@ -11,6 +11,11 @@ mat-card p {
   font-size: 1.2em;
 }
 
+.col-12 {
+  width: 100%;
+  text-align: center;
+}
+
 .aboutText {
   background-color: #f2f3f7;
   border-radius: 5px;
@@ -21,10 +26,26 @@ mat-card p {
 }
 
 .col-4 .container {
+  width: 100%;
   padding-top: 1em;
-  padding-left: 7em;
 }
 
 .col-4 .container .row {
   margin-bottom: 1em;
+}
+
+.nodejs {
+  margin-right: 10em;
+}
+
+.javascript {
+  margin-right: 7em;
+}
+
+.html {
+  margin-right: 4em;
+}
+
+.angular {
+  margin-right: 2em;
 }
