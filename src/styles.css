@@ -4,10 +4,9 @@ body {
   font-family: 'Barlow', sans-serif;
 }
 
-/* section {
-  padding-top: 70px;
+section {
   overflow: hidden;
-} */
+}
 
 hr {
   border: none;
