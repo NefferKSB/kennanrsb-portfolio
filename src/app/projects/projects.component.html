@@ -1,25 +1,28 @@
-<div class="container">
-  <div class="h1" data-aos="fade-down" data-aos-offset="50">Projects</div>
-  <mat-grid-list id="projects" [cols]="colNum" (window:resize)="onResize($event)" rowHeight="16:4" [style.margin]="margin" gutterSize="20px">
-    <mat-grid-tile
-    [attr.data-aos]="siteCard.aos"
-    appMaterialElevation
-    [defaultElevation]="defaultElevation"
-    [raisedElevation]="raisedElevation"
-    *ngFor="let siteCard of siteCards"
-    [colspan]="siteCard.cols"
-    [rowspan]="siteCard.rows"
-    >
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{siteCard.title}}</mat-card-title>
-        </mat-card-header>
-        <img [src]="siteCard.imageSrc">
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
-<div class="container">
-  <hr>
-</div>
+<section id="projects">
+  <div class="container">
+    <div class="h1" data-aos="fade-down" data-aos-offset="50">Projects</div>
+    <mat-grid-list [cols]="colNum" (window:resize)="onResize($event)" rowHeight="16:4" [style.margin]="margin" gutterSize="20px">
+      <mat-grid-tile
+      [attr.data-aos]="siteCard.aos"
+      appMaterialElevation
+      [defaultElevation]="defaultElevation"
+      [raisedElevation]="raisedElevation"
+      *ngFor="let siteCard of siteCards"
+      [colspan]="siteCard.cols"
+      [rowspan]="siteCard.rows"
+      >
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{siteCard.title}}</mat-card-title>
+          </mat-card-header>
+          <img [src]="siteCard.imageSrc">
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="container">
+    <hr>
+  </div>
+</section>
+
 

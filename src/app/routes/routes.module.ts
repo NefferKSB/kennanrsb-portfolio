@@ -19,7 +19,10 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
+    RouterModule.forRoot(routes, {
+      //useHash: false,
+      //anchorScrolling: 'enabled'
+     })
   ],
   exports: [
     RouterModule

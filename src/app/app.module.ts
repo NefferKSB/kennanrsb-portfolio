@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConnectionService } from './services/connection-service';
+import { ViewportScroller } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -51,4 +52,4 @@ import { ConnectionService } from './services/connection-service';
   providers: [ConnectionService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
