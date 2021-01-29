@@ -8,12 +8,10 @@ import { ResponsiveService } from '../services/responsive-service';
 })
 export class AboutComponent implements OnInit {
   public fontSize: string;
-  public display: string;
   public screenSize: string = this.responsiveService.screenWidth;
 
   constructor(private responsiveService: ResponsiveService) {
     this.fontSize = "18px";
-    this.display = "";
   }
 
   ngOnInit() {
@@ -33,11 +31,9 @@ export class AboutComponent implements OnInit {
     }
     if(screenSize === 'md') {
       this.fontSize = "18px";
-      this.display = "none";
     }
     if(screenSize === 'sm') {
       this.fontSize = "18px";
-      this.display = "none";
     }
   }
 }

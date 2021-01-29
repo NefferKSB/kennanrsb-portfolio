@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ConnectionService } from '../services/connection-service';
 
 @Component({
@@ -24,18 +24,17 @@ export class ContactComponent {
     private connectionService: ConnectionService
   ) {
     this.contactForm = fb.group({
-      contactFormName: ['', Validators.required],
-      contactFormEmail: [
+      Fullname: ['', Validators.required],
+      Email: [
         '',
         Validators.compose([Validators.required, Validators.email]),
       ],
-      contactFormSubjects: ['', Validators.required],
-      contactFormMessage: ['', Validators.required],
-      contactFormCopy: [''],
+      Subject: ['', Validators.required],
+      Message: ['', Validators.required]
     });
   }
 
-  onSubmit() {
+  onSubmit(test:any) {
     this.connectionService.sendMessage(this.contactForm.value).subscribe(
       () => {
         alert('Your message has been sent.');
