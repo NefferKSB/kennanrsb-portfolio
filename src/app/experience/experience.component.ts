@@ -11,6 +11,7 @@ export class ExperienceComponent implements OnInit{
   expLineStart: number;
   expLineLimit: number;
   fontSize: string;
+  display: string;
   screenSize: string = this.responsiveService.screenWidth;
   workEntries: Work_Entry[];
 
@@ -18,6 +19,7 @@ export class ExperienceComponent implements OnInit{
     this.expLineStart = 0;
     this.expLineLimit = 2;
     this.fontSize = '1.3em';
+    this.display = 'inline-block';
     this.workEntries = [
       {
         company: 'Plat4mation',
@@ -108,15 +110,24 @@ export class ExperienceComponent implements OnInit{
     this.expLineLimit = this.expLineLimit - 4;
   }
 
+  onResize(event: any){
+    this.responsiveService.checkWidth();
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+  }
+
   setResponsiveAttrs(screenSize: string) {
     if(screenSize === 'lg') {
       this.fontSize = "1.3em";
+      this.display = 'inline-block';
     }
     if(screenSize === 'md') {
       this.fontSize = "1.2em";
+      this.display = 'inline-block';
     }
     if(screenSize === 'sm') {
-      this.fontSize = "1.1em";
+      this.fontSize = "1em";
+      this.display = 'block';
     }
   }
 }

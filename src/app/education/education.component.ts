@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Education_Entry } from '../models/education-entry-model';
+import { ResponsiveService } from '../services/responsive-service';
 
 @Component ({
   selector: 'education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent {
+export class EducationComponent implements OnInit {
   eduLineStart: number;
   eduLineLimit: number;
+  borderRightBottom: string;
+  borderRightTop: string;
+  screenSize: string = this.responsiveService.screenWidth;
   educationEntries: Education_Entry[];
 
-  constructor() {
+  constructor(private responsiveService: ResponsiveService) {
     this.eduLineStart = 0;
     this.eduLineLimit = 2;
+    this.borderRightBottom = '';
+    this.borderRightTop = '';
     this.educationEntries = [
       {
         title: 'Mechanical Engineering & Technology',
@@ -61,11 +67,37 @@ export class EducationComponent {
     ]
   }
 
+  ngOnInit() {
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+  }
+
   showMoreExpLines(){
     this.eduLineLimit = this.eduLineLimit + 2;
   }
 
   showLessExpLines(){
     this.eduLineLimit = this.eduLineLimit - 2;
+  }
+
+  onResize(event: any){
+    this.responsiveService.checkWidth();
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+  }
+
+  setResponsiveAttrs(screenSize: string) {
+    if(screenSize === 'lg') {
+      this.borderRightBottom = '';
+      this.borderRightTop = '';
+    }
+    if(screenSize === 'md') {
+      this.borderRightBottom = '';
+      this.borderRightTop = '';
+    }
+    if(screenSize === 'sm') {
+      this.borderRightBottom = '.25rem';
+      this.borderRightTop = '.25rem';
+    }
   }
 }

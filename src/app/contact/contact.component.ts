@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
   optionsSelect: Array<any> = [];
-  selected: string = '';
+  selected: string;
   width: string;
   screenSize: string = this.responsiveService.screenWidth;
 
@@ -28,6 +28,7 @@ export class ContactComponent implements OnInit {
     private responsiveService: ResponsiveService
   ) {
     this.width = '50%';
+    this.selected = '';
     this.contactForm = fb.group({
       Fullname: ['', Validators.required],
       Email: [

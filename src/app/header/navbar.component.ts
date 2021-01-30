@@ -9,10 +9,13 @@ import { HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   isScrolled = false;
+  menuOffset: number;
 
   constructor(
     private viewportScroller: ViewportScroller
-  ) {}
+  ) {
+    this.menuOffset = 115;
+  }
 
   @HostListener('window:scroll')
   scrollEvent() {
