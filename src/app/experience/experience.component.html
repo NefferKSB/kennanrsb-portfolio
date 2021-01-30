@@ -12,7 +12,7 @@
               <mat-card class="work-history-label">
                 <h2>{{workEntry.position}}<span>{{workEntry.dateRange}}</span></h2>
                 <h4>{{workEntry.company}}</h4>
-                <ul>
+                <ul [style.font-size]="fontSize">
                     <li *ngFor="let workExpLine of workEntry.experience">{{workExpLine}}</li>
                 </ul>
               </mat-card>

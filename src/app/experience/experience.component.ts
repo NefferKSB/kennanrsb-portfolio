@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Work_Entry } from '../models/work-entry-model';
+import { ResponsiveService } from '../services/responsive-service';
 
 @Component ({
   selector: 'experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit{
   expLineStart: number;
   expLineLimit: number;
+  fontSize: string;
+  screenSize: string = this.responsiveService.screenWidth;
   workEntries: Work_Entry[];
 
-  constructor() {
+  constructor(private responsiveService: ResponsiveService) {
     this.expLineStart = 0;
     this.expLineLimit = 2;
+    this.fontSize = '1.3em';
     this.workEntries = [
       {
         company: 'Plat4mation',
@@ -91,11 +95,28 @@ export class ExperienceComponent {
     ]
   }
 
+  ngOnInit() {
+    this.screenSize = this.responsiveService.screenWidth;
+    this.setResponsiveAttrs(this.screenSize);
+  }
+
   showMoreExpLines(){
     this.expLineLimit = this.expLineLimit + 4;
   }
 
   showLessExpLines(){
     this.expLineLimit = this.expLineLimit - 4;
+  }
+
+  setResponsiveAttrs(screenSize: string) {
+    if(screenSize === 'lg') {
+      this.fontSize = "1.3em";
+    }
+    if(screenSize === 'md') {
+      this.fontSize = "1.2em";
+    }
+    if(screenSize === 'sm') {
+      this.fontSize = "1.1em";
+    }
   }
 }

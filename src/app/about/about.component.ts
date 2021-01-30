@@ -7,11 +7,13 @@ import { ResponsiveService } from '../services/responsive-service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  public fontSize: string;
-  public screenSize: string = this.responsiveService.screenWidth;
+  fontSize: string;
+  marginTop: string;
+  screenSize: string = this.responsiveService.screenWidth;
 
   constructor(private responsiveService: ResponsiveService) {
-    this.fontSize = "18px";
+    this.fontSize = "1.2em";
+    this.marginTop = "";
   }
 
   ngOnInit() {
@@ -27,13 +29,16 @@ export class AboutComponent implements OnInit {
 
   setResponsiveAttrs(screenSize: string) {
     if(screenSize === 'lg') {
-      this.fontSize = "18px";
+      this.fontSize = "1.3em";
+      this.marginTop = "";
     }
     if(screenSize === 'md') {
-      this.fontSize = "18px";
+      this.fontSize = "1.2em";
+      this.marginTop = "40px";
     }
     if(screenSize === 'sm') {
-      this.fontSize = "18px";
+      this.fontSize = "1.1em";
+      this.marginTop = "40px";
     }
   }
 }
