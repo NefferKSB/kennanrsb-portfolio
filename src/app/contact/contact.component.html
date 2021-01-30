@@ -1,24 +1,40 @@
 <section id="contact" (window:resize)="onResize($event)">
   <div class="container" [style.width]="width">
     <p class="h1 mb-4 text-center" data-aos="fade-down">Contact me</p>
-    <form data-aos="zoom-in-up" [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+    <form
+      data-aos="zoom-in-up"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+    >
       <mat-form-field appearance="standard">
         <mat-label for="fullname">Name</mat-label>
-        <input type="text" matInput placeholder="First and Last Name" name="Fullname" formControlName="Fullname">
+        <input
+          type="text"
+          matInput
+          placeholder="First and Last Name"
+          formControlName="Fullname"
+        />
       </mat-form-field>
 
       <mat-form-field appearance="standard">
         <mat-label for="Email">Email</mat-label>
-        <input type="email" matInput placeholder="Email" name="Email" formControlName="Email">
+        <input
+          type="email"
+          matInput
+          placeholder="You email"
+          formControlName="Email"
+        />
       </mat-form-field>
 
-      <!-- Subject -->
       <mat-form-field appearance="standard">
         <mat-label for="Subject">Subject</mat-label>
-        <mat-select [(value)]="selected" formControlName="Subject">
-          <mat-option value="workOpportunity">Work Opportunity</mat-option>
-          <mat-option value="question">Question</mat-option>
-          <mat-option value="generalRemark">General Remark</mat-option>
+        <mat-select
+          [(value)]="selected"
+          formControlName="Subject"
+        >
+          <mat-option value="Work Opportunity">Work Opportunity</mat-option>
+          <mat-option value="Question">Question</mat-option>
+          <mat-option value="General Remark">General Remark</mat-option>
         </mat-select>
       </mat-form-field>
 
@@ -26,8 +42,14 @@
         <mat-label for="message">Message</mat-label>
         <textarea matInput name="Message" formControlName="Message"></textarea>
       </mat-form-field>
-      <button type="submit" mat-stroked-button color="primary" [disabled]="!contactForm.valid">Send</button>
+      <button
+        type="submit"
+        mat-stroked-button
+        color="primary"
+        [disabled]="!contactForm.valid"
+      >
+        Send
+      </button>
     </form>
   </div>
 </section>
-

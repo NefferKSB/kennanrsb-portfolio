@@ -1,17 +1,30 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConnectionService {
-  url: string = 'http://localhost:3000/send';
+  private api: string = 'http://mailthis.to/nefferKSB';
+
   constructor(private http: HttpClient) {}
 
-  sendMessage(messageContent: any) {
-    return this.http.post(this.url, JSON.stringify(messageContent), {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      responseType: 'text',
-    });
+  postMessage(input: any) {
+    return this.http.post(this.api, input, {
+      responseType: 'text'
+    })
+    .pipe(
+      map(
+        (response) => {
+          if(response) {
+            return response;
+          } else return;
+        },
+        (error: any) => {
+          return error;
+        }
+      )
+    )
   }
 }

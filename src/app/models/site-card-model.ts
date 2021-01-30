@@ -4,4 +4,5 @@ export interface Site_Cards {
   cols: number;
   rows: number;
   aos: string;
+  aosDelay: string;
 }

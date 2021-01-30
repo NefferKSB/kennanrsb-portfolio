@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { ConnectionService } from '../services/connection-service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'contact',
@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private connectionService: ConnectionService,
+    private http: HttpClient,
     private responsiveService: ResponsiveService
   ) {
     this.width = '50%';
@@ -63,16 +63,21 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  onSubmit(test:any) {
-    this.connectionService.sendMessage(this.contactForm.value).subscribe(
-      () => {
-        alert('Your message has been sent.');
-        this.contactForm.reset();
-        this.disabledSubmitButton = true;
+  onSubmit() {
+    let contactRequest = {
+      name: this.contactForm.value.Fullname,
+      email: this.contactForm.value.Email,
+      subject: this.contactForm.value.Subject,
+      message: this.contactForm.value.Message
+    }
+    this.http.post('http://localhost:3000/sendmail', contactRequest).subscribe(
+      data => {
+        let res:any = data;
+        console.log(`${contactRequest.name} has been notified, the message id is ${res.messageId}`);
       },
-      (error) => {
-        console.log('Error', error);
+      err => {
+        console.log(err);
       }
-    );
+    )
   }
 }
