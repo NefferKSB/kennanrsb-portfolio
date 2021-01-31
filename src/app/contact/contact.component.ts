@@ -73,7 +73,7 @@ export class ContactComponent implements OnInit {
     this.http.post('http://localhost:3000/sendmail', contactRequest).subscribe(
       data => {
         let res:any = data;
-        console.log(`${contactRequest.name} has been notified, the message id is ${res.messageId}`);
+        //console.log(`${contactRequest.name} has been notified, the message id is ${res.messageId}`);
       },
       err => {
         console.log(err);

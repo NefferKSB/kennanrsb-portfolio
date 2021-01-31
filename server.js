@@ -41,10 +41,10 @@ async function sendMail(contactReq, callback) {
 
   console.log(contactReq);
   let mailOptions = {
-    from: `KennanRSB CV Site Inquiry <test@test.com>`, // sender address
-    to: 'kennanrsbportfolio@gmail.com', // list of receivers
+    to: 'nefferKSB@kennanrsb.com', // list of receivers
     subject: contactReq.subject, // Subject line
-    html: `<p>${contactReq.message}</p>`
+    html: `<p>${contactReq.message}</p>
+    <p>Message sent from ${contactReq.name} their email address is ${contactReq.email}`
   };
 
   // send mail with defined transport object

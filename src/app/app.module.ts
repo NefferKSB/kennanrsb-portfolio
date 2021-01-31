@@ -20,8 +20,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ConnectionService } from './services/connection-service';
-import { ViewportScroller } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -49,7 +47,7 @@ import { ViewportScroller } from '@angular/common';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ConnectionService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
