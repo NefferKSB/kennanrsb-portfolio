@@ -1,6 +1,23 @@
 const app = require('./app');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const http = require("http");
+
+const normalizePort = val => {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+};
 
 //Disable CORs
 app.use((req, res, next) => {
@@ -10,16 +27,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use(bodyParser.json());
-
-app.listen(3000, () => {
-  console.log('The server started on port 3000.');
-});
-
-// app.get('/api', (req, res) => {
-//   res.send(
-//     "<h1 style='text-align: center'> Server Running"
-//   );
-// });
 
 app.post('/sendmail', (req, res) => {
   //console.log('request came');
@@ -55,3 +62,9 @@ async function sendMail(contactReq, callback) {
 
   callback(info);
 }
+
+const port = normalizePort(process.env.PORT || "3000");
+app.set("port", port);
+
+const server = http.createServer(app);
+server.listen(port);
