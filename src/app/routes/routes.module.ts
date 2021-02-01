@@ -19,10 +19,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, {
-      //useHash: false,
-      //anchorScrolling: 'enabled'
-     })
+    RouterModule.forRoot(routes, {})
   ],
   exports: [
     RouterModule

@@ -1,18 +1,22 @@
 const app = require('./backend/app');
 const emailAuth = require('../../../../Desktop/auth.json');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
-
-app.use(cors({ origin: '*' }));
+//Disable CORs
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  next();
+});
 app.use(bodyParser.json());
 
 app.listen(3000, () => {
   console.log('The server started on port 3000.');
 });
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send(
     "<h1 style='text-align: center'> Server Running"
   );

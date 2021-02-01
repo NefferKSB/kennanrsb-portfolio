@@ -2,6 +2,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
 import { HttpClient } from "@angular/common/http";
+import { environment } from 'src/environments/environment';
+
+const BACKEND_URL = environment.apiUrl;
 
 @Component({
   selector: 'contact',
@@ -70,7 +73,7 @@ export class ContactComponent implements OnInit {
       subject: this.contactForm.value.Subject,
       message: this.contactForm.value.Message
     }
-    this.http.post('http://localhost:3000/sendmail', contactRequest).subscribe(
+    this.http.post(BACKEND_URL + '/sendmail', contactRequest).subscribe(
       data => {
         let res:any = data;
         //console.log(`${contactRequest.name} has been notified, the message id is ${res.messageId}`);
