@@ -1,4 +1,4 @@
-const app = require('./backend/app');
+const app = require('./app');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
@@ -15,11 +15,11 @@ app.listen(3000, () => {
   console.log('The server started on port 3000.');
 });
 
-app.get('/api', (req, res) => {
-  res.send(
-    "<h1 style='text-align: center'> Server Running"
-  );
-});
+// app.get('/api', (req, res) => {
+//   res.send(
+//     "<h1 style='text-align: center'> Server Running"
+//   );
+// });
 
 app.post('/sendmail', (req, res) => {
   //console.log('request came');
