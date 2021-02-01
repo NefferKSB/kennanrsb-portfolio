@@ -79,5 +79,6 @@ export class ContactComponent implements OnInit {
         console.log(err);
       }
     )
+    this.contactForm.reset();
   }
 }

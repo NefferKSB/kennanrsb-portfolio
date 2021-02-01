@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/sendmail', (req, res) => {
-  console.log('request came');
+  //console.log('request came');
   let user = req.body;
   sendMail(user, info => {
-    console.log(`The mail has been sent, the id is ${info.messageId}`);
+    //console.log(`The mail has been sent, the id is ${info.messageId}`);
     res.send(info);
   });
 });
@@ -39,7 +39,7 @@ async function sendMail(contactReq, callback) {
     }
   });
 
-  console.log(contactReq);
+  //console.log(contactReq);
   let mailOptions = {
     to: 'nefferKSB@kennanrsb.com', // list of receivers
     subject: contactReq.subject, // Subject line
