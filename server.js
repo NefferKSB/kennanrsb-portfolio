@@ -1,5 +1,4 @@
 const app = require('./backend/app');
-const emailAuth = require('../../../../Desktop/auth.json');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
@@ -34,12 +33,12 @@ app.post('/sendmail', (req, res) => {
 async function sendMail(contactReq, callback) {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: process.env.NODEMAILER_HOST,
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: emailAuth.name,
-      pass: emailAuth.pass
+      user: process.env.NODEMAILER_NAME,
+      pass: process.env.NODEMAILER_PASS
     }
   });
 
