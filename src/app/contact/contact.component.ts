@@ -1,8 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
 import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
+import { MailService } from '../services/mail-service';
 
 const BACKEND_URL = environment.apiUrl;
 
@@ -28,7 +29,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private responsiveService: ResponsiveService
+    private responsiveService: ResponsiveService,
+    public mailService: MailService
   ) {
     this.width = '50%';
     this.selected = '';
@@ -66,15 +68,24 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-
-    let contactRequest = {
-      name: this.contactForm.value.Fullname,
-      email: this.contactForm.value.Email,
-      subject: this.contactForm.value.Subject,
-      message: this.contactForm.value.Message
+  onSubmit(form: NgForm) {
+    if(form.invalid) {
+      return;
     }
-    this.http.post(BACKEND_URL + '/sendmail', contactRequest).subscribe()
-    this.contactForm.reset();
+    this.mailService.sendMail(form.value.contactName, form.value.email, form.value.subject, form.value.message);
+
   }
+
+  // onSubmit() {
+  //   let contactRequest = {
+  //     name: this.contactForm.value.Fullname,
+  //     email: this.contactForm.value.Email,
+  //     subject: this.contactForm.value.Subject,
+  //     message: this.contactForm.value.Message
+  //   }
+  //   this.http.post(BACKEND_URL + '/sendmail', contactRequest).subscribe(response => {
+  //     console.log(response);
+  //   })
+  //   //this.contactForm.reset();
+  // }
 }

@@ -3,26 +3,32 @@
     <p class="h1 mb-4 text-center" data-aos="fade-down">Contact me</p>
     <form
       data-aos="zoom-in-up"
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
+      #contactForm="ngForm"
+      (submit)="onSubmit(contactForm)"
     >
       <mat-form-field appearance="standard">
         <mat-label for="fullname">Name</mat-label>
         <input
-          type="text"
           matInput
+          ngModel
+          #contactName="ngModel"
+          name="contactName"
+          type="text"
           placeholder="First and Last Name"
-          formControlName="Fullname"
+          required
         />
       </mat-form-field>
 
       <mat-form-field appearance="standard">
         <mat-label for="Email">Email</mat-label>
         <input
-          type="email"
           matInput
+          ngModel
+          #email="ngModel"
+          name="email"
+          type="email"
           placeholder="You email"
-          formControlName="Email"
+          required
         />
       </mat-form-field>
 
@@ -30,7 +36,11 @@
         <mat-label for="Subject">Subject</mat-label>
         <mat-select
           [(value)]="selected"
-          formControlName="Subject"
+          matInput
+          ngModel
+          #subject="ngModel"
+          name="subject"
+          required
         >
           <mat-option value="Work Opportunity">Work Opportunity</mat-option>
           <mat-option value="Question">Question</mat-option>
@@ -40,7 +50,14 @@
 
       <mat-form-field appearance="standard">
         <mat-label for="message">Message</mat-label>
-        <textarea matInput name="Message" formControlName="Message"></textarea>
+        <textarea
+          matInput
+          ngModel
+          #message="ngModel"
+          name="message"
+          required
+        >
+        </textarea>
       </mat-form-field>
       <button
         type="submit"
