@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { EmailData } from '../models/email-data';
 
-const BACKEND_URL = environment.apiUrl + '/sendmail';
+const BACKEND_URL = environment.apiUrl + '/sendmail/';
 
 @Injectable({ providedIn: 'root'})
 export class MailService {
