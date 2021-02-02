@@ -75,17 +75,4 @@ export class ContactComponent implements OnInit {
     this.mailService.sendMail(form.value.contactName, form.value.email, form.value.subject, form.value.message);
 
   }
-
-  // onSubmit() {
-  //   let contactRequest = {
-  //     name: this.contactForm.value.Fullname,
-  //     email: this.contactForm.value.Email,
-  //     subject: this.contactForm.value.Subject,
-  //     message: this.contactForm.value.Message
-  //   }
-  //   this.http.post(BACKEND_URL + '/sendmail', contactRequest).subscribe(response => {
-  //     console.log(response);
-  //   })
-  //   //this.contactForm.reset();
-  // }
 }
