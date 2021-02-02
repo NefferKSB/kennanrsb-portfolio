@@ -1,8 +1,6 @@
 const nodemailer = require('nodemailer');
 
 exports.sendMail = (req, res, next) => {
-  console.log('Works');
-  console.log(req);
   let user = req.body;
   sendMail(user, info => {
     console.log(`The mail has been sent, the id is ${info.messageId}`);
