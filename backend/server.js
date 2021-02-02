@@ -1,7 +1,8 @@
-const app = require('./app');
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const http = require("http");
+require('dotenv').config();
 
 const normalizePort = val => {
   var port = parseInt(val, 10);
@@ -19,6 +20,8 @@ const normalizePort = val => {
   return false;
 };
 
+const port = normalizePort(process.env.PORT || "3000");
+
 //Disable CORs
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -26,10 +29,14 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   next();
 });
+
 app.use(bodyParser.json());
 
+app.listen(port, () => {
+  console.log(`The server started on port ${port}.`);
+})
+
 app.post('/sendmail', (req, res) => {
-  //console.log('request came');
   let user = req.body;
   sendMail(user, info => {
     //console.log(`The mail has been sent, the id is ${info.messageId}`);
@@ -41,15 +48,17 @@ async function sendMail(contactReq, callback) {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: process.env.NODEMAILER_HOST,
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    port: 465,
+    secure: true, // true for 465, false for other ports
     auth: {
+      type: "OAuth2",
       user: process.env.NODEMAILER_NAME,
-      pass: process.env.NODEMAILER_PASS
+      clientId: process.env.NODEMAILER_CLIENTID,
+      clientSecret: process.env.NODEMAILER_CLIENTSECRET,
+      refreshToken: process.env.NODEMAILER_REFRESHTOKEN
     }
   });
 
-  //console.log(contactReq);
   let mailOptions = {
     to: 'nefferKSB@kennanrsb.com', // list of receivers
     subject: contactReq.subject, // Subject line
@@ -63,8 +72,3 @@ async function sendMail(contactReq, callback) {
   callback(info);
 }
 
-const port = normalizePort(process.env.PORT || "3000");
-app.set("port", port);
-
-const server = http.createServer(app);
-server.listen(port);
