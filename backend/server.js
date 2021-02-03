@@ -23,4 +23,5 @@ app.set("port", port);
 
 const server = http.createServer(app);
 server.listen(port);
+console.log('KSB1234 listening to ' + port);
 
