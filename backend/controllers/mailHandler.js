@@ -4,7 +4,6 @@ const mailgun = require('mailgun-js');
 const DOMAIN = process.env.DOMAIN;
 const mg = mailgun({apiKey: process.env.MAILGUN_API, domain: DOMAIN});
 
-console.log(DOMAIN)
 
 exports.sendMail = (req, res, next) => {
   let contactReq = req.body;
@@ -14,10 +13,10 @@ exports.sendMail = (req, res, next) => {
   let message = contactReq.message;
 
   const data = {
-    from: `Portfolio Inquiry <${contactEmail}>`,
+    from: `Portfolio Inquiry <nefferksb@kennanrsb.com>`,
     to: 'kennanrsb@gmail.com',
     subject: subject,
-    text: `A new portfolio inquiry has come in from ${contactName} and they say: ${message}.`
+    text: `A new portfolio inquiry has come in from ${contactName}: ${contactEmail} and they say: ${message}.`
   };
 
   mg.messages().send(data)
