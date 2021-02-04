@@ -1,8 +1,9 @@
-require('dotenv').config();
+require('dotenv').config({path: __dirname + './../.env'});
 const mailgun = require('mailgun-js');
-const DOMAIN = process.env.DOMAIN;
-console.log('KSB321 ' + process.env.MAILGUN_API);
-const mg = mailgun({apiKey: process.env.MAILGUN_API, domain: DOMAIN});
+const domain = process.env.DOMAIN;
+const apiKey = process.env.MAILGUN_API;
+
+const mg = mailgun({apiKey: apiKey, domain: domain});
 
 exports.sendMail = (req, res, next) => {
   let contactReq = req.body;
@@ -12,7 +13,7 @@ exports.sendMail = (req, res, next) => {
   let message = contactReq.message;
 
   const data = {
-    from: `Portfolio Inquiry <nefferksb@${DOMAIN}>`,
+    from: `Portfolio Inquiry <nefferksb@kennanrsb.com>`,
     to: 'kennanrsb@gmail.com',
     subject: subject,
     text: `A new portfolio inquiry has come in from ${contactName}: ${contactEmail} and they say: ${message}.`
