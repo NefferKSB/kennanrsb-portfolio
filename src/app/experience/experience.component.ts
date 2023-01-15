@@ -22,6 +22,37 @@ export class ExperienceComponent implements OnInit{
     this.display = 'inline-block';
     this.workEntries = [
       {
+        company: 'Sentara Healthcare',
+        position: 'Principal Domain Architect',
+        dateRange: 'Feb 2022 - Current',
+        experience: [
+          "Carried over Classic mobile functionality to ServiceNow's current Mobile Agent App",
+          "Participated in and lead workshops regarding implementation of new functionality in Sentara’s ServiceNow instance",
+          "Worked closely with Business Process Owners to scope Ideas and Demands tied to their respective Business Processes ",
+          "Participated in implementation of SPM modules in Sentara’s instance: Idea, Demand, Project, Project Task, Resource Plan",
+          "Participated in implementation of GRC modules in Sentara’s instance: Issue, Remediation Task",
+          "Performed periodic instance health scans and remediated findings to align with ServiceNow best practices",
+          "Lead platform upgrades"
+        ]
+      },
+      {
+        company: 'Sentara Healthcare',
+        position: 'Senior Software Engineer',
+        dateRange: 'Feb 2021 - Feb 2022',
+        experience: [
+          "Built multiple integrations with Workday for Chart of Accounts (COA) data imports leveraging ServiceNow Scripted REST APIs",
+          "Arranged regular communications with Workday developers for testing and troubleshooting integration issues",
+          "Lead workshops with internal COA Stakeholders to define use cases for a re-designed Service Portal checkout form",
+          "Worked extensively on customizing the OOTB cart checkout widget to align with internal COA Stakeholder defined use cases",
+          "Assisted in the data migration of legacy Idea, Demand, and Cost Plan data from SharePoint into ServiceNow",
+          "Worked closely with other members of the ServiceNow support team to resolve Incidents placed by internal IT users",
+          "Performed routine Release and Change duties, including the migration of update sets / configurations into Sentara's production environment",
+          "Supported other team members with troubleshooting Enhancement related issues",
+          "Occasionally assisted with scoping Demands",
+          "Placed Ideas for platform improvements"
+        ]
+      },
+      {
         company: 'Plat4mation',
         position: 'Technical Consultant',
         dateRange: 'Jul 2018 - Nov 2020',
