@@ -23,7 +23,7 @@ export class ExperienceComponent implements OnInit{
     this.workEntries = [
       {
         company: 'Sentara Healthcare',
-        position: 'Principal Domain Architect',
+        position: 'Principal Technical Architect',
         dateRange: 'Feb 2022 - Current',
         experience: [
           "Carried over Classic mobile functionality to ServiceNow's current Mobile Agent App",
