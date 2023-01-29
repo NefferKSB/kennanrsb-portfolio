@@ -26,12 +26,19 @@ export class ExperienceComponent implements OnInit{
         position: 'Principal Technical Architect',
         dateRange: 'Feb 2022 - Current',
         experience: [
-          "Carried over Classic mobile functionality to ServiceNow's current Mobile Agent App",
+          "Extensive experience in ServiceNow implementation and administration",
+          "In-depth knowledge of the ServiceNow platform, including custom development, scripting, and reporting",
+          "Strong understanding of ITIL framework and ITSM processes",
+          "Experience with Agile methodologies and project management",
+          "Ability to design and implement ServiceNow solutions to meet business requirements",
+          "Strong skills in scripting languages such as JavaScript, AngularJS, and Jelly",
+          "Experience with integrating ServiceNow with other systems and applications",
+          "Ability to provide technical guidance and mentorship to team members",
+          "ServiceNow mobile app development experience",
           "Participated in and lead workshops regarding implementation of new functionality in Sentara’s ServiceNow instance",
           "Worked closely with Business Process Owners to scope Ideas and Demands tied to their respective Business Processes ",
           "Participated in implementation of SPM modules in Sentara’s instance: Idea, Demand, Project, Project Task, Resource Plan",
           "Participated in implementation of GRC modules in Sentara’s instance: Issue, Remediation Task",
-          "Performed periodic instance health scans and remediated findings to align with ServiceNow best practices",
           "Lead platform upgrades"
         ]
       },
