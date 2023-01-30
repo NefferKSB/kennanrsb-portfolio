@@ -21,7 +21,7 @@
           <div *ngIf="expLineLimit < workEntries.length" class="display-more-btn-container">
             <button type="button" class="btn btn-primary" (click)="showMoreExpLines()">Show More</button>
           </div>
-          <div *ngIf="expLineLimit > 2" class="display-more-btn-container">
+          <div *ngIf="expLineLimit >= workEntries.length" class="display-more-btn-container">
             <button type="button" class="btn btn-primary" (click)="showLessExpLines()">Show Less</button>
           </div>
         </div>

@@ -31,15 +31,14 @@ export class ExperienceComponent implements OnInit{
           "Strong understanding of ITIL framework and ITSM processes",
           "Experience with Agile methodologies and project management",
           "Ability to design and implement ServiceNow solutions to meet business requirements",
-          "Strong skills in scripting languages such as JavaScript, AngularJS, and Jelly",
+          "Strong skills in ServiceNow scripting languages",
           "Experience with integrating ServiceNow with other systems and applications",
           "Ability to provide technical guidance and mentorship to team members",
           "ServiceNow mobile app development experience",
           "Participated in and lead workshops regarding implementation of new functionality in Sentara’s ServiceNow instance",
           "Worked closely with Business Process Owners to scope Ideas and Demands tied to their respective Business Processes ",
           "Participated in implementation of SPM modules in Sentara’s instance: Idea, Demand, Project, Project Task, Resource Plan",
-          "Participated in implementation of GRC modules in Sentara’s instance: Issue, Remediation Task",
-          "Lead platform upgrades"
+          "Participated in implementation of GRC modules in Sentara’s instance: Issue, Remediation Task"
         ]
       },
       {
@@ -145,7 +144,7 @@ export class ExperienceComponent implements OnInit{
   }
 
   showLessExpLines(){
-    this.expLineLimit = this.expLineLimit - 4;
+    this.expLineLimit = 2;
   }
 
   onResize(event: any){

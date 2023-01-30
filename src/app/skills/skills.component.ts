@@ -21,8 +21,8 @@ export class SkillsComponent {
       },
       {
         skillOne: 'JavaScript',
-        percentageOne: '75%',
-        styleOne: 'width: 75%;',
+        percentageOne: '80%',
+        styleOne: 'width: 80%;',
         skillTwo: 'HTML, CSS',
         percentageTwo: '60%',
         styleTwo: 'width: 60%;'
@@ -47,9 +47,9 @@ export class SkillsComponent {
         skillOne: 'ServiceNow ITSM Implementations',
         percentageOne: '60%',
         styleOne: 'width: 60%;',
-        skillTwo: 'ServiceNow ITBM Impementations',
-        percentageTwo: '30%',
-        styleTwo: 'width: 30%;'
+        skillTwo: 'ServiceNow SPM Impementations',
+        percentageTwo: '45%',
+        styleTwo: 'width: 45%;'
       }
     ]
   }
