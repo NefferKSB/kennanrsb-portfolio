@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, NgForm } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
 import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
@@ -13,7 +13,7 @@ const BACKEND_URL = environment.apiUrl;
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
   disabledSubmitButton: boolean = true;
   optionsSelect: Array<any> = [];
   selected: string;
@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private http: HttpClient,
     private responsiveService: ResponsiveService,
     public mailService: MailService
