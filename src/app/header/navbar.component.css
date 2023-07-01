@@ -74,6 +74,14 @@ mat-nav-list a {
   color: #2099d1;
 }
 
+.show-element {
+  display: block;
+}
+
+.hide-element {
+  display: none;
+}
+
 .mat-drawer.mat-drawer-end {
   height: fit-content;
 }

@@ -14,6 +14,7 @@ export class ResponsiveService {
 
   public checkWidth() {
     const width = window.innerWidth;
+
     if (width <= 599) {
         this.screenWidth = 'sm';
     } else if (width > 599 && width <= 959) {
@@ -22,4 +23,5 @@ export class ResponsiveService {
         this.screenWidth = 'lg';
     }
   }
+
 }

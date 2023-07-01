@@ -1,26 +1,82 @@
-const app = require('./app');
-const http = require("http");
+require("dotenv").config({path: "../.env"});
+const nodemailer = require("nodemailer");
+const bodyParser = require('body-parser');
+const { google } = require("googleapis");
+const cors = require('cors');
+const OAuth2 = google.auth.OAuth2;
+const express = require('express');
+const app = express();
+const port = 3000;
 
+// Enable CORS for all routes
+app.use(cors());
 
-const normalizePort = val => {
-  var port = parseInt(val, 10);
+// Middleware for parsing JSON data
+app.use(bodyParser.json());
+app.post('/send-email', (req, res) => {
+  const { contactName, email, subject, message } = req.body;
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
+  // Compose the email
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: 'kennanrsb@gmail.com', //Recipient email address goes here
+    subject: 'CV / Portfolio Website Contact Form Submission',
+    html: `
+      <h3>New Inquiry</h3>
+      <p><strong>Name:</strong> ${contactName}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong> ${message}</p>
+    `
+  };
 
-  if (port >= 0) {
-    // port number
-    return port;
-  }
+  const createTransporter = async () => {
+    const oauth2Client = new OAuth2(
+      process.env.CLIENT_ID,
+      process.env.CLIENT_SECRET,
+      "https://developers.google.com/oauthplayground"
+    );
 
-  return false;
-};
+    oauth2Client.setCredentials({
+      refresh_token: process.env.REFRESH_TOKEN
+    });
 
-const port = normalizePort(process.env.PORT || "3000");
-app.set("port", port);
+    const accessToken = await new Promise((resolve, reject) => {
+      oauth2Client.getAccessToken((err, token) => {
+        if (err) {
+          reject("Failed to create access token :(" + err);
+        }
+        resolve(token);
+      });
+    });
 
-const server = http.createServer(app);
-server.listen(port);
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: process.env.EMAIL,
+        accessToken,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN
+      }
+    });
 
+    return transporter;
+  };
+
+  const sendEmail = async (mailOpt) => {
+    let emailTransporter = await createTransporter();
+    await emailTransporter.sendMail(mailOpt);
+  };
+
+  // Send the email
+  sendEmail(mailOptions);
+  console.log("sent: " + mailOptions);
+  res.send({message: 'Form submitted successfully'});
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

@@ -5,8 +5,8 @@
         <a (click)="scrollToElementId('home')">Kennan RSB</a>
       </span>
       <span class="spacer"></span>
-      <div fxShow="true" fxHide.lt-md="true">
-        <ul>
+      <div>
+        <ul [ngClass]="{'hide-element': !isLargeScreen, 'show-element': isLargeScreen}">
           <li class="hvr-bounce-to-bottom">
             <a (click)="scrollToElementId('about')">About</a>
           </li>
@@ -24,7 +24,11 @@
           </li>
         </ul>
       </div>
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm [disableRipple]="true">
+      <button
+        mat-icon-button (click)="sidenav.toggle()"
+        [disableRipple]="true"
+        [ngClass]="{'hide-element': isLargeScreen, 'show-element': !isLargeScreen}"
+      >
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar-row>
