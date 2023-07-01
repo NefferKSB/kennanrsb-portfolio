@@ -70,7 +70,7 @@ export class ContactComponent implements OnInit {
       return;
     }
     this.mailService.sendMail(form.value.contactName, form.value.email, form.value.subject, form.value.message);
-    console.log(form.value.contactName, form.value.email, form.value.subject, form.value.message);
+    //console.log(form.value.contactName, form.value.email, form.value.subject, form.value.message);
     form.reset();
   }
 }
