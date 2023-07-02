@@ -69,8 +69,23 @@ export class ContactComponent implements OnInit {
     if(form.invalid) {
       return;
     }
-    this.mailService.sendMail(form.value.contactName, form.value.email, form.value.subject, form.value.message);
-    //console.log(form.value.contactName, form.value.email, form.value.subject, form.value.message);
-    form.reset();
+    this.mailService.sendMail(
+      form.value.contactName,
+      form.value.email,
+      form.value.subject,
+      form.value.message
+    ).subscribe({
+      next: () => {
+        // Email sent successfully
+        // Reset the form or show a success message
+        form.reset();
+        //this.form.reset();
+      },
+      error: (error) => {
+        // Handle error
+        console.log(form.value.contactName, form.value.email, form.value.subject, form.value.message);
+        console.error('Failed to send email:', error);
+      }
+    });
   }
 }

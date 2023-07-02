@@ -15,9 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/api/send-email', (req, res) => {
-  res.send("POST Request Called")
-  console.log("test");
-
   const { contactName, email, subject, message } = req.body;
 
   // Compose the email
@@ -76,10 +73,8 @@ app.post('/api/send-email', (req, res) => {
   };
 
   // Send the email
-  console.log("sent: " + mailOptions);
   sendEmail(mailOptions);
   res.send({message: 'Form submitted successfully'});
-
 });
 
 // Start the server
