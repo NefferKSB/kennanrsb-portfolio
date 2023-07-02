@@ -14,6 +14,8 @@ export class MailService {
   sendMail(contactName: string, email: string, subject: string, message: string): Observable<any> {
     const emailData: EmailData = {contactName: contactName, email: email, subject: subject, message: message};
     console.log(this.http.post<any>(BACKEND_URL + '/send-email', emailData));
+    console.log(emailData);
+    console.log(BACKEND_URL + '/send-email');
     return this.http.post<any>(BACKEND_URL + '/send-email', emailData);
   }
 }

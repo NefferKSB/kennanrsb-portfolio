@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server": "npm run config && ng serve --port $PORT",
-    "nodemon": "nodemon ./backend/server.js"
+    "nodemon": "nodemon ./backend/index.js"
   },
   "private": true,
   "dependencies": {

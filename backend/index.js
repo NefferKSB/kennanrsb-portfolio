@@ -13,7 +13,9 @@ app.use(cors());
 
 // Middleware for parsing JSON data
 app.use(bodyParser.json());
+
 app.post('/api/send-email', (req, res) => {
+  res.send("POST Request Called")
   console.log("test");
 
   const { contactName, email, subject, message } = req.body;
