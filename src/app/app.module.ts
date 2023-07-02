@@ -30,7 +30,6 @@ import { HttpClientModule } from '@angular/common/http';
     EducationComponent,
     SkillsComponent,
     ProjectsComponent,
-    ContactComponent,
     FooterComponent,
     MaterialElevationDirective
   ],
@@ -42,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularMaterialModule,
     RoutesModule,
     LayoutModule,
+    ContactComponent,
     ReactiveFormsModule,
     HttpClientModule
   ],

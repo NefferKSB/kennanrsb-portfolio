@@ -1,9 +1,13 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { UntypedFormGroup, Validators, NgForm, UntypedFormBuilder } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
 import { MailService } from '../services/mail-service';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 const BACKEND_URL = environment.apiUrl;
 
@@ -12,9 +16,12 @@ export interface DialogData {}
   selector: 'contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
+  standalone: true,
+  imports: [CommonModule, MatInputModule, MatSelectModule, MatDialogModule, FormsModule, ReactiveFormsModule]
 })
+
 export class ContactComponent implements OnInit {
-  contactForm: UntypedFormGroup;
+  form!: FormGroup; //Add '!' to indicate definite assignment
   disabledSubmitButton: boolean = true;
   optionsSelect: Array<any> = [];
   selected: string;
@@ -22,30 +29,33 @@ export class ContactComponent implements OnInit {
   screenSize: string = this.responsiveService.screenWidth;
 
   @HostListener('input') oninput() {
-    if (this.contactForm.valid) {
+    if (this.form.valid) {
       this.disabledSubmitButton = false;
     }
   }
 
   constructor(
-    private fb: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private responsiveService: ResponsiveService,
     public mailService: MailService,
     public dialog: MatDialog
   ) {
     this.width = '50%';
     this.selected = '';
-    this.contactForm = fb.group({
-      Fullname: ['', Validators.required],
-      Email: ['', [Validators.email, Validators.required]],
-      Subject: ['', Validators.required],
-      Message: ['', Validators.required]
-    });
   }
 
   ngOnInit() {
     this.screenSize = this.responsiveService.screenWidth;
     this.setResponsiveAttrs(this.screenSize);
+
+    this.form = this.formBuilder.group(
+      {
+        contactName: ['', Validators.required],
+        email: ['', [Validators.email, Validators.required]],
+        subject: ['', Validators.required],
+        message: ['', Validators.required],
+      }
+    );
   }
 
   onResize(event: any){
@@ -70,21 +80,21 @@ export class ContactComponent implements OnInit {
     this.dialog.open(DialogDataExampleDialog, {});
   }
 
-  onSubmit(form: NgForm) {
-    if(form.invalid) {
+  onSubmit() {
+    if(this.form.invalid) {
       return;
     }
     this.mailService.sendMail(
-      form.value.contactName,
-      form.value.email,
-      form.value.subject,
-      form.value.message
+      this.form.value.contactName,
+      this.form.value.email,
+      this.form.value.subject,
+      this.form.value.message
     ).subscribe({
       next: () => {
         // Email sent successfully
         // Reset the form or show a success message
         this.openDialog();
-        form.reset();
+        this.form.reset();
       },
       error: (error) => {
         // Handle error
@@ -99,6 +109,7 @@ export class ContactComponent implements OnInit {
   standalone: true,
   imports: [MatDialogModule],
 })
+
 export class DialogDataExampleDialog {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }
