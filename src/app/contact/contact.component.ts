@@ -2,6 +2,7 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { environment } from 'src/environments/environment';
 import { MailService } from '../services/mail-service';
 import { CommonModule } from '@angular/common';
@@ -17,7 +18,7 @@ export interface DialogData {}
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
   standalone: true,
-  imports: [CommonModule, MatInputModule, MatSelectModule, MatDialogModule, FormsModule, ReactiveFormsModule]
+  imports: [CommonModule, MatInputModule, MatSelectModule, MatDialogModule, FormsModule, ReactiveFormsModule, MatButtonModule]
 })
 
 export class ContactComponent implements OnInit {
