@@ -1,12 +1,13 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormBuilder, Validators, NgForm } from '@angular/forms';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { UntypedFormGroup, Validators, NgForm, UntypedFormBuilder } from '@angular/forms';
 import { ResponsiveService } from '../services/responsive-service';
-import { HttpClient } from "@angular/common/http";
+import { MatDialog, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
 import { MailService } from '../services/mail-service';
 
 const BACKEND_URL = environment.apiUrl;
 
+export interface DialogData {}
 @Component({
   selector: 'contact',
   templateUrl: './contact.component.html',
@@ -28,9 +29,9 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private fb: UntypedFormBuilder,
-    private http: HttpClient,
     private responsiveService: ResponsiveService,
-    public mailService: MailService
+    public mailService: MailService,
+    public dialog: MatDialog
   ) {
     this.width = '50%';
     this.selected = '';
@@ -65,6 +66,10 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  openDialog() {
+    this.dialog.open(DialogDataExampleDialog, {});
+  }
+
   onSubmit(form: NgForm) {
     if(form.invalid) {
       return;
@@ -78,14 +83,22 @@ export class ContactComponent implements OnInit {
       next: () => {
         // Email sent successfully
         // Reset the form or show a success message
+        this.openDialog();
         form.reset();
-        //this.form.reset();
       },
       error: (error) => {
         // Handle error
-        console.log(form.value.contactName, form.value.email, form.value.subject, form.value.message);
         console.error('Failed to send email:', error);
       }
     });
   }
+}
+@Component({
+  selector: 'dialog-data',
+  templateUrl: 'dialog-data.html',
+  standalone: true,
+  imports: [MatDialogModule],
+})
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }
