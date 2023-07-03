@@ -28,6 +28,7 @@
           placeholder="You email"
           required
         />
+        <span class="error-text" *ngIf="form.controls['email'].hasError('email') && !form.controls['email'].pristine">Please enter a valid email address.</span>
       </mat-form-field>
 
       <mat-form-field>
