@@ -3,10 +3,4 @@ export const environment = {
   apiUrl: 'https://api.kennanrsb.com/api'
 };
 
-/*
-location ^~ /.well-known/acme-challenge/ {
-  allow all;
-  root /var/www/html;
-  default_type "text/plain";
-}
-*/
+
