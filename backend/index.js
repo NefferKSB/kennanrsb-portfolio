@@ -5,6 +5,7 @@ const { google } = require("googleapis");
 const cors = require('cors');
 const OAuth2 = google.auth.OAuth2;
 const express = require('express');
+const AWS = require('aws-sdk');
 const app = express();
 const port = 3000;
 
@@ -17,7 +18,27 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.json("API is running"));
 
 app.post('/api/send-email', (req, res) => {
+  const cloudwatchlogs = new AWS.CloudWatchLogs({ region: 'us-east-1' });
   const { contactName, email, subject, message } = req.body;
+
+  const logEvent = {
+    logGroupName: 'cv_portfolio_site_logs',
+    logStreamName: 'cv_port_log_stream', // Replace with a unique log stream name
+    logEvents: [
+      {
+        message: 'This is a log message.',
+        timestamp: Date.now()
+      }
+    ]
+  };
+
+  cloudwatchlogs.putLogEvents(logEvent, function(err, data) {
+    if (err) {
+      console.log('Error logging to CloudWatch Logs:', err);
+    } else {
+      console.log('Successfully logged to CloudWatch Logs.');
+    }
+  });
 
   // Compose the email
   const mailOptions = {
