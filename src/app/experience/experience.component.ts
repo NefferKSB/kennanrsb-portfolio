@@ -73,7 +73,6 @@ export class ExperienceComponent implements OnInit{
           "Experience writing detailed stories",
           "Created business rules, script includes, UI policies, etc based on client requests and best practices",
           "Migrated data from a client's legacy system into ServiceNow",
-          "Experience Implementing Agent mobile and Now mobile",
           "Performed duties as a technical consultant for one of Plat4mation's largest contracts at the time",
           "Experience developing and designing service portals for clients",
           "Experience creating ServiceNow reports and dashboards",
