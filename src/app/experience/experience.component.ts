@@ -35,6 +35,7 @@ export class ExperienceComponent implements OnInit{
           "Experience with integrating ServiceNow with other systems and applications",
           "Ability to provide technical guidance and mentorship to team members",
           "ServiceNow mobile app development experience",
+          "Experience setting up and configuring Now Assist Skills",
           "Participated in and lead workshops regarding implementation of new functionality in Sentara’s ServiceNow instance",
           "Worked closely with Business Process Owners to scope Ideas and Demands tied to their respective Business Processes ",
           "Participated in implementation of SPM modules in Sentara’s instance: Idea, Demand, Project, Project Task, Resource Plan",
