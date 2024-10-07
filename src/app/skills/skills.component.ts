@@ -45,11 +45,11 @@ export class SkillsComponent {
       },
       {
         skillOne: 'ServiceNow ITSM Implementations',
-        percentageOne: '60%',
-        styleOne: 'width: 60%;',
+        percentageOne: '80%',
+        styleOne: 'width: 80%;',
         skillTwo: 'ServiceNow SPM Impementations',
-        percentageTwo: '45%',
-        styleTwo: 'width: 45%;'
+        percentageTwo: '80%',
+        styleTwo: 'width: 80%;'
       }
     ]
   }
